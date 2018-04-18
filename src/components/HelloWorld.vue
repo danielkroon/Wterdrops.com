@@ -5,29 +5,26 @@
        {{ number }}
      </li>
    </ul>
-   <input 
-      v-model="newNumber"
-      @keyup.enter="addNumber"
-      placeholder="Add number"
-      />
+   <input v-model.number="newNumber" type="number" @keyup.enter="addNumber" placeholder="Add number"/>
   </div>
 </template>
 
 <script>
 export default {
   el: '#app',
-  data: {
-    newNumber: '',
-    inputNumbers: [
-      '1',
-      '2'
-    ]
+  data () {
+    return {
+      newNumber: '',
+      inputNumbers: [
+        '1',
+        '2'
+      ]
+    }
   },
   methods: {
-  addNumber() {
-    debugger
-    this.inputNumbers.push(this.newNumber)
-    this.newNumber = ''
+    addNumber () {
+      this.inputNumbers.push(this.newNumber)
+      this.newNumber = ''
     }
   }
 }
