@@ -5,7 +5,14 @@
        {{ number }}
      </li>
    </ul>
-   <input v-model.number="newNumber" type="number" @keyup.enter="addNumber" placeholder="Add number"/>
+
+   <form @submit.prevent="submitForm">
+     <div>
+       <label for="numberInput"></label>
+       <input id="numberInput" v-model.number="newNumber" type="number" placeholder="Add number" required/>
+     </div>
+     <button type="submit">Submit</button>
+   </form>
   </div>
 </template>
 
@@ -14,16 +21,28 @@ export default {
   el: '#app',
   data () {
     return {
-      newNumber: '',
+      // newNumber: {},
+      // store numbers the user filled in.
       inputNumbers: [
-        '1',
-        '2'
+        {
+          number: 0,
+          timestamp: ''
+        },
+        {
+          number: 0,
+          timestamp: ''
+        }
       ]
     }
   },
   methods: {
-    addNumber () {
-      this.inputNumbers.push(this.newNumber)
+    submitForm () {
+      this.inputNumbers.push(
+        {
+          newNumber: this.newNumber,
+          timestamp: new Date()
+        }
+      )
       this.newNumber = ''
     }
   }
