@@ -44,13 +44,20 @@ export default {
       this.checkDifference()
     },
     checkDifference () {
-      console.log(this.lastSubmittedNumber)
-      if (typeof this.secondLastSubmittedNumber !== 'undefined') {
-        this.secondLastSubmittedNumber = this.submittedNumbers.slice(-2, -1)[0].number
+      console.log('last submitted number ' + this.lastSubmittedNumber)
+      debugger
+      if (this.submittedNumbers.length <= 1) {
+        this.secondLastSubmittedNumber.push(0)
+      } else {
+        this.secondLastSubmittedNumber = this.submittedNumbers[this.submittedNumbers.length - 2].number
       }
-      console.log(this.secondLastSubmittedNumber)
+
+      console.log('second last submitted number ' + this.secondLastSubmittedNumber)
+
       let difference = Math.abs(this.lastSubmittedNumber - this.secondLastSubmittedNumber)
+
       console.log('the differene is ' + difference)
+
       if (difference > 10) {
         console.log('you are using to much')
       } else {
