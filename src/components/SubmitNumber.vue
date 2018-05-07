@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   el: '#app',
   data () {
@@ -35,30 +36,64 @@ export default {
       this.submittedNumbers.push(
         {
           number: this.newNumber,
-          timestamp: new Date()
+          timestamp: moment()
         }
       )
       this.newNumber = ''
 
-      this.lastSubmittedNumber = this.submittedNumbers.slice(-1)[0].number
+      if (this.lastSubmittedNumber.length > 1) {
+        this.lastSubmittedNumber[0].push(
+          {
+            number: this.submittedNumbers.slice(-1)[0].number,
+            timestamp: this.submittedNumbers.slice(-1)[0].timestamp
+          }
+        )
+      } else {
+        // empty array
+        this.lastSubmittedNumber = []
+        // populate array with new lastSubmittedNumber
+        this.lastSubmittedNumber.push(
+          {
+            number: this.submittedNumbers.slice(-1)[0].number,
+            timestamp: this.submittedNumbers.slice(-1)[0].timestamp
+          }
+        )
+      }
+      console.log('last submitted number ' + this.lastSubmittedNumber[0].number)
       this.checkDifference()
     },
     checkDifference () {
-      console.log('last submitted number ' + this.lastSubmittedNumber)
-      debugger
+      // define secondLastSubmittedNumber
       if (this.submittedNumbers.length <= 1) {
-        this.secondLastSubmittedNumber.push(0)
+        this.secondLastSubmittedNumber.push(
+          {
+            number: 0,
+            timestamp: moment()
+          }
+        )
       } else {
-        this.secondLastSubmittedNumber = this.submittedNumbers[this.submittedNumbers.length - 2].number
+        // empty array
+        this.secondLastSubmittedNumber = []
+        // populate array with secondLastSubmittedNumber
+        this.secondLastSubmittedNumber.push(
+          {
+            number: this.submittedNumbers[this.submittedNumbers.length - 2].number,
+            timestamp: this.submittedNumbers[this.submittedNumbers.length - 2].timestamp
+          }
+        )
       }
+      console.log('second last submitted number ' + this.secondLastSubmittedNumber[0].number)
 
-      console.log('second last submitted number ' + this.secondLastSubmittedNumber)
+      var a = this.lastSubmittedNumber[0].timestamp
+      var b = this.secondLastSubmittedNumber[0].timestamp
+      // var b = '2018-04-02T20:19:40.928Z'
+      let diffDays = a.diff(b, 'days')
+      console.log('difference in days between last and second submitted is ' + diffDays)
 
-      let difference = Math.abs(this.lastSubmittedNumber - this.secondLastSubmittedNumber)
+      let diffStat = Math.abs(this.lastSubmittedNumber - this.secondLastSubmittedNumber)
+      console.log('the differene is stats is ' + diffStat)
 
-      console.log('the differene is ' + difference)
-
-      if (difference > 10) {
+      if (diffStat > 10) {
         console.log('you are using to much')
       } else {
         console.log('great job')
