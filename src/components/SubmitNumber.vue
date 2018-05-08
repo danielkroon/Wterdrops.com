@@ -28,7 +28,10 @@ export default {
       submittedNumbers: [],
       // last submitted numbers
       lastSubmittedNumber: [],
-      secondLastSubmittedNumber: []
+      secondLastSubmittedNumber: [],
+      // average use day
+      increasePerDay:[],
+      averugeUse2p: 0.25
     }
   },
   methods: {
@@ -85,19 +88,21 @@ export default {
       console.log('second last submitted number ' + this.secondLastSubmittedNumber[0].number)
 
       var a = this.lastSubmittedNumber[0].timestamp
-      var b = this.secondLastSubmittedNumber[0].timestamp
-      // var b = '2018-04-02T20:19:40.928Z'
+      // var b = this.secondLastSubmittedNumber[0].timestamp
+      var b = '2018-05-02T20:19:40.928Z'
       let diffDays = a.diff(b, 'days')
       console.log('difference in days between last and second submitted is ' + diffDays)
-
-      let diffStat = Math.abs(this.lastSubmittedNumber - this.secondLastSubmittedNumber)
+      
+      let diffStat = Math.abs(this.lastSubmittedNumber[0].number - this.secondLastSubmittedNumber[0].number)
       console.log('the differene is stats is ' + diffStat)
-
-      if (diffStat > 10) {
-        console.log('you are using to much')
-      } else {
-        console.log('great job')
-      }
+      debugger
+      this.checkIncrease(diffDays, diffStat)
+    },
+    checkIncrease(diffDays, diffStat) {
+      // average use 2p each year = 93 m3 
+      // average use 2p each day = 0.25 m3
+      this.increasePerDay = diffStat / diffDays
+      console.log('increase per day is ' + this.increasePerDay)
     }
   }
 }
