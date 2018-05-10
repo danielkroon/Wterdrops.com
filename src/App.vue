@@ -1,12 +1,17 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div>
+    <submit-number></submit-number>
   </div>
 </template>
 
 <script>
+import SubmitNumber from './components/SubmitNumber'
+
 export default {
-  name: 'App'
+  components: {
+    // Add a reference to the submitNumber component in the components property
+    SubmitNumber
+  }
 }
 </script>
 

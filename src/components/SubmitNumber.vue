@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1 v-if="increasePerDay > 0 ">Water use per day is {{increasePerDay}}(M&#179;)</h1>
    <form @submit.prevent="submitForm">
      <div>
        <label for="numberInput"></label>
@@ -16,10 +17,12 @@
   </div>
 </template>
 
-<script>
+<script type= "text/javascript">
 import moment from 'moment'
+
 export default {
-  el: '#app',
+  name: 'app',
+  // data function avails data to the template
   data () {
     return {
       // create newNumber array
@@ -30,7 +33,7 @@ export default {
       lastSubmittedNumber: [],
       secondLastSubmittedNumber: [],
       // average use day
-      increasePerDay:[],
+      increasePerDay: [],
       averugeUse2p: 0.25
     }
   },
@@ -92,16 +95,15 @@ export default {
       var b = '2018-05-02T20:19:40.928Z'
       let diffDays = a.diff(b, 'days')
       console.log('difference in days between last and second submitted is ' + diffDays)
-      
       let diffStat = Math.abs(this.lastSubmittedNumber[0].number - this.secondLastSubmittedNumber[0].number)
       console.log('the differene is stats is ' + diffStat)
-      debugger
       this.checkIncrease(diffDays, diffStat)
     },
-    checkIncrease(diffDays, diffStat) {
-      // average use 2p each year = 93 m3 
+    checkIncrease (diffDays, diffStat) {
+      // average use 2p each year = 93 m3
       // average use 2p each day = 0.25 m3
       this.increasePerDay = diffStat / diffDays
+      this.increasePerDay.toFixed(2)
       console.log('increase per day is ' + this.increasePerDay)
     }
   }
