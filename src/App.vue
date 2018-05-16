@@ -1,18 +1,18 @@
 <template>
   <div>
     <navbar />
-    <submit-number />
+    <index />
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar'
-import SubmitNumber from './components/SubmitNumber'
+import Index from '@/components/Index'
+import Navbar from '@/components/Navbar'
 
 export default {
   components: {
     // Add a reference to the submitNumber component in the components property
-    SubmitNumber,
+    Index,
     Navbar
   }
 }

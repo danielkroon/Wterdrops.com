@@ -1,14 +1,20 @@
 <template>
   <div id="app">
     <h1 v-if="increasePerDay > 0 ">Water use per day is {{increasePerDay}}(M&#179;)</h1>
-   <form @submit.prevent="submitForm">
-     <div>
-       <label for="numberInput"></label>
-       <input id="numberInput" v-model.number="newNumber" type="number" placeholder="Add number" required/>
-     </div>
-     <button type="submit">Submit</button>
-   </form>
-
+    <div class="row">
+      <form class="col s12" @submit.prevent="submitForm">
+        <div class="row">
+          <div class="input-field col s6">
+            Please fill in an number:
+            <input id="numberInput" class="validate" v-model.number="newNumber" type="number" placeholder="1234" required/>
+            <label for="numberInput"></label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
    <ul>
     <li v-for="number in submittedNumbers" :key="number.id">
        {{ number }}

@@ -5,7 +5,7 @@
                 <router-link to="">
                     <span class="nav-title">Waterstats</span>
                 </router-link>
-                <ul class="right">
+                <ul class="right hide-on-small-and-down">
                     <li>
                         <a href="" class="waves-effect waves-light btn  blue lighten-1">Add
                             <router-link to="">
@@ -21,12 +21,12 @@
 
 <script>
 export default {
-    name: 'Navbar',
-    data() {
-        return {
+  name: 'Navbar',
+  data () {
+    return {
 
-        }
     }
+  }
 }
 </script>
 
@@ -35,4 +35,3 @@ export default {
     padding: 0px 0px 0px 10px;
 }
 </style>
-
