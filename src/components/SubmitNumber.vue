@@ -4,15 +4,17 @@
     <div class="row">
       <form class="col s12" @submit.prevent="submitForm">
         <div class="row">
-          <div class="input-field col s6">
-            Please fill in an number:
+          <div class="input-field col s6  offset-m3">
+            Vul je watermeterstand(M&#179;) in:
             <input id="numberInput" class="validate" v-model.number="newNumber" type="number" placeholder="1234" required/>
             <label for="numberInput"></label>
           </div>
         </div>
-        <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
-          <i class="material-icons right">send</i>
-        </button>
+        <div class="col s6  offset-m5">
+          <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
       </form>
     </div>
    <ul>

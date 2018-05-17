@@ -2,14 +2,14 @@
     <div class="navbar">
         <nav class="nav-extend blue darken-2">
             <div class="nav-content">
-                <router-link to="">
+                <router-link to="/">
                     <span class="nav-title">Waterstats</span>
                 </router-link>
                 <ul class="right hide-on-small-and-down">
                     <li>
-                        <a href="" class="waves-effect waves-light btn  blue lighten-1">Add
-                            <router-link to="">
-                                 <i class="material-icons">add</i>
+                        <a href="" class="waves-effect waves-light btn  blue lighten-1">
+                            <router-link :to="{ name: 'SubmitNumber' }">
+                                 Add
                             </router-link>
                         </a>
                     </li>
