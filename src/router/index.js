@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
-import SubmitNumber from '@/components/SubmitNumber'
+import AddSubmit from '@/components/AddSubmit'
 
 Vue.use(Router)
 
@@ -14,8 +14,8 @@ export default new Router({
     },
     {
       path: '/submit',
-      name: 'SubmitNumber',
-      component: SubmitNumber
+      name: 'AddSubmit',
+      component: AddSubmit
     }
   ]
 })

@@ -7,8 +7,8 @@
           <ul class="collection">
             <li class="collection-item">
               <i class="material-icons circle delete" @click="deleteSubmit(submit.id)">delete</i>
-              <span>ID: {{ submit.id }}</span>
-              <p>Watermeterstand: {{ submit.number }}</p>
+              <span><b>ID: </b>{{ submit.id }}</span>
+              <p><b>Watermeterstand: </b>{{ submit.number }}</p>
               {{ submit.timestamp }}
             </li>
           </ul>
