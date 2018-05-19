@@ -1,17 +1,21 @@
 <template>
-    <div class="home">
-      <h1>home</h1>
-      <div v-for="submit in submits" :key="index">
-        <ul class="collection">
-          <li v-for="submit in submits" :key="index" class="collection-item">
-            <i class="material-icons circle">insert_chart</i>
-            <span>ID: {{ submit.id }}</span>
-            <p>Watermeterstand: {{ submit.number }}</p>
-            {{ submit.timestamp }}
-           </li>
-        </ul>
+  <div class="index">
+    <h1>index</h1>
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div class="submit" v-for="submit in submits" :key="submit.id" >
+          <ul class="collection">
+            <li class="collection-item">
+              <i class="material-icons circle delete" @click="deleteSubmit(submit.id)">delete</i>
+              <span>ID: {{ submit.id }}</span>
+              <p>Watermeterstand: {{ submit.number }}</p>
+              {{ submit.timestamp }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -22,6 +26,17 @@ export default {
   data () {
     return {
       submits: []
+    }
+  },
+  methods: {
+    deleteSubmit (id) {
+      // delete doc from firestore
+      db.collection('submits').doc(id).delete()
+        .then(() => {
+          this.submits = this.submits.filter(submit => {
+            return submit.id !== id
+          })
+        })
     }
   },
   created () {
@@ -39,5 +54,11 @@ export default {
 </script>
 
 <style>
-
+   .delete {
+    position: absolute;
+    cursor: pointer;
+    top: 4px;
+    right: 4px;
+    font-size: 1.4em;
+  }
 </style>
