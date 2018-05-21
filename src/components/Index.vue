@@ -41,7 +41,7 @@ export default {
   },
   created () {
     // fetch data from the firestore
-    db.collection('submits').get()
+    db.collection('submits').orderBy('timestamp', 'desc').get()
       .then(snaptshot => {
         snaptshot.forEach(doc => {
           let submit = doc.data()

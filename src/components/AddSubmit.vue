@@ -46,8 +46,7 @@ export default {
       lastSubmittedNumber: [],
       secondLastSubmittedNumber: [],
       // average use day
-      increasePerDay: [],
-      averugeUse2p: 0.25
+      increasePerDay: []
     }
   },
   methods: {
@@ -63,7 +62,7 @@ export default {
         })
         db.collection('submits').add({
           number: this.number,
-          timestamp: this.timestamp,
+          timestamp: moment().format('lll'),
           slug: this.slug
         }).then(() => {
           this.$router.push({name: 'Index'})
