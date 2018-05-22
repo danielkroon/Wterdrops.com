@@ -13,6 +13,20 @@
                             </router-link>
                         </a>
                     </li>
+                    <li>
+                        <a href="" class="waves-effect waves-light btn  blue lighten-1">
+                            <router-link :to="{ name: 'Checkusage' }">
+                                 Usage
+                            </router-link>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="waves-effect waves-light btn  blue lighten-1">
+                            <router-link :to="{ name: 'Submits' }">
+                                 Submits
+                            </router-link>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
