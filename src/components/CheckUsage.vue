@@ -1,12 +1,16 @@
 <template>
   <div class="check-usage">
-    <h1 v-if="increasePerDay > 0 ">Water use per day is {{increasePerDay}}(M&#179;)</h1>
+    <div>The average water use per day in an 2 person household is {{averageUse}}(M&#179;)</div>
+    <div v-if="increasePerDay > 0 ">Your household is using {{increasePerDay}}(M&#179;) water per day.</div>
+    <div v-if="increasePerDay > averageUse"><bold>That is too much. Try using less water the coming days.</bold></div>
+    <div v-else>You are doing a great job! Keep it up :)</div>
     <p >last submitted {{lastSubmitted}}</p>
     <p >second last submitted {{secondLastSubmitted}}</p>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
 import db from '@/firebase/init'
 
 export default {
@@ -15,22 +19,34 @@ export default {
     return {
       // all submits (from firestore)
       submits: [],
-      // last submitted numbers
-      lastSubmitted: [],
-      secondLastSubmitted: [],
+      // last submitted number
+      lastSubmitted: null,
+      secondLastSubmitted: null,
       // average use day
-      increasePerDay: 0
+      increasePerDay: null,
+      averageUse: 0.25
     }
   },
   methods: {
     checkUsage (submits) {
-      console.log(this.submits)
       if (this.submits.length < 1) {
         console.log('submits is empty')
       } else {
         this.lastSubmitted = this.submits[0]
         this.secondLastSubmitted = this.submits[1]
       }
+      // calculate the difference in days between last and second submitted with momentJS.
+      let a = moment(this.lastSubmitted.timestamp)
+      let b = moment(this.secondLastSubmitted.timestamp)
+      let diffDays = a.diff(b, 'days')
+      // calculate the difference in days between last and second submitted.
+      let diffStat = Math.abs(this.lastSubmitted.number - this.secondLastSubmitted.number)
+      this.checkIncrease(diffDays, diffStat)
+    },
+    checkIncrease (diffDays, diffStat) {
+      this.increasePerDay = diffStat / diffDays
+      // number is rounded if necessary.
+      this.increasePerDay.toFixed(2)
     }
   },
   created () {
@@ -46,47 +62,6 @@ export default {
       })
   }
 }
-
-// checkDifference () {
-//   // define secondLastSubmittedNumber
-//   if (this.submittedNumbers.length <= 1) {
-//     this.secondLastSubmittedNumber.push(
-//       {
-//         number: 0,
-//         timestamp: moment()
-//       }
-//     )
-//   } else {
-//     // empty array
-//     this.secondLastSubmittedNumber = []
-//     // populate array with secondLastSubmittedNumber
-//     this.secondLastSubmittedNumber.push(
-//       {
-//         number: this.submittedNumbers[this.submittedNumbers.length - 2].number,
-//         timestamp: this.submittedNumbers[this.submittedNumbers.length - 2].timestamp
-//       }
-//     )
-//   }
-//   console.log('second last submitted number ' + this.secondLastSubmittedNumber[0].number)
-
-//   var a = this.lastSubmittedNumber[0].timestamp
-//   // var b = this.secondLastSubmittedNumber[0].timestamp
-//   var b = '2018-05-02T20:19:40.928Z'
-//   let diffDays = a.diff(b, 'days')
-//   console.log('difference in days between last and second submitted is ' + diffDays)
-//   let diffStat = Math.abs(this.lastSubmittedNumber[0].number - this.secondLastSubmittedNumber[0].number)
-//   console.log('the differene is stats is ' + diffStat)
-//   this.checkIncrease(diffDays, diffStat)
-// },
-// checkIncrease (diffDays, diffStat) {
-//   // average use 2p each year = 93 m3
-//   // average use 2p each day = 0.25 m3
-//   this.increasePerDay = diffStat / diffDays
-//   this.increasePerDay.toFixed(2)
-//   console.log('increase per day is ' + this.increasePerDay)
-// }
-// }
-
 </script>
 
 <style>
