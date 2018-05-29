@@ -2,10 +2,11 @@
   <div class="check-usage">
     <div>The average water use per day in an 2 person household is {{averageUse}}(M&#179;)</div>
     <div v-if="increasePerDay > 0 ">Your household is using {{increasePerDay}}(M&#179;) water per day.</div>
-    <div v-if="increasePerDay > averageUse"><bold>That is too much. Try using less water the coming days.</bold></div>
+    <div v-if="increasePerDay > averageUse">That is too much. Try using less water the coming days.</div>
     <div v-else>You are doing a great job! Keep it up :)</div>
     <p >last submitted {{lastSubmitted}}</p>
     <p >second last submitted {{secondLastSubmitted}}</p>
+    <div><chartjs-line :datalabel="'water use'" :labels="labels" :data="dataset" :bind="true"></chartjs-line></div>
   </div>
 </template>
 
@@ -24,7 +25,10 @@ export default {
       secondLastSubmitted: null,
       // average use day
       increasePerDay: null,
-      averageUse: 0.25
+      averageUse: 0.25,
+      // charts
+      labels: [],
+      dataset: [65, 59, 80, 81, 56, 55, 40]
     }
   },
   methods: {
@@ -47,6 +51,13 @@ export default {
       this.increasePerDay = diffStat / diffDays
       // number is rounded if necessary.
       this.increasePerDay.toFixed(2)
+      this.addChartLabels()
+    },
+    addChartLabels () {
+      for (let submit of Object.values(this.submits)) {
+        this.labels.push(submit.timestamp)
+        console.log(this.dataset)
+      }
     }
   },
   created () {
