@@ -34,15 +34,20 @@ export default {
   // data function avails data to the template
   data () {
     return {
+      submits: [],
+      lastSubmitted: null,
+      increasePerDay: null,
       // // create number array
       number: null,
       timestamp: '',
-      feedback: null,
-      slug: null
+      slug: null,
+      usage: null,
+      feedback: null
     }
   },
   methods: {
     addSubmit () {
+      // add number
       if (this.number) {
         this.feedback = null
         // create a slug
@@ -52,10 +57,28 @@ export default {
           remove: /[$*_+~.,()'"!\-:@]/g,
           lower: true
         })
+
+        if (this.submits.length < 1) {
+          console.log('submits is empty')
+        } else {
+          this.lastSubmitted = this.submits[0]
+        }
+
+        // calculate the difference in days between last and second submitted with momentJS.
+        let a = moment(this.number.timestamp)
+        let b = moment(this.lastSubmitted.timestamp)
+        let diffDays = a.diff(b, 'days')
+
+        // calculate the difference in days between last and second submitted.
+        let diffStat = Math.abs(this.number - this.lastSubmitted.number)
+        this.usage = (diffStat / diffDays).toFixed(2)
+
+        // add to database
         db.collection('submits').add({
           number: this.number,
           timestamp: this.timestamp,
-          slug: this.slug
+          slug: this.slug,
+          usage: this.usage
         }).then(() => {
           this.$router.push({name: 'Submits'})
         }).catch(err => {
@@ -65,6 +88,17 @@ export default {
         this.feedback = 'You must enter a number to submit a new number.'
       }
     }
+  },
+  created () {
+    // fetch data from the firestore
+    db.collection('submits').orderBy('timestamp', 'desc').get()
+      .then(snaptshot => {
+        snaptshot.forEach(doc => {
+          let submit = doc.data()
+          submit.id = doc.id
+          this.submits.push(submit)
+        })
+      })
   }
 }
 

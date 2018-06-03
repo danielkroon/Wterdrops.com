@@ -15,7 +15,7 @@
                     </li>
                     <li>
                         <a href="" class="waves-effect waves-light btn  blue lighten-1">
-                            <router-link :to="{ name: 'Checkusage' }">
+                            <router-link :to="{ name: 'ChartUsage' }">
                                  Usage
                             </router-link>
                         </a>

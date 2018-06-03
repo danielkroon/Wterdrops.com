@@ -10,6 +10,7 @@
               <span><b>ID: </b>{{ submit.id }}</span>
               <p><b>Watermeterstand: </b>{{ submit.number }}</p>
               {{ submit.timestamp }}
+              <p><b>Gemiddelde gebruik: </b> {{submit.usage}}</p>
             </li>
           </ul>
         </div>

@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import Submits from '@/components/Submits'
 import AddSubmit from '@/components/AddSubmit'
-import CheckUsage from '@/components/CheckUsage'
+import ChartUsage from '@/components/ChartUsage'
 
 Vue.use(Router)
 
@@ -26,8 +26,8 @@ export default new Router({
     },
     {
       path: '/usage',
-      name: 'Checkusage',
-      component: CheckUsage
+      name: 'Chartusage',
+      component: ChartUsage
     }
   ]
 })
