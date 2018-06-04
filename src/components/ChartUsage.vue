@@ -1,7 +1,7 @@
 <template>
   <div class="check-usage">
     <div class="row">
-      <div class="col s10 offset-s1">
+      <div class="col s8">
         <chartjs-line
           :fill="true"
           :datalabel="'My consumption'"
@@ -17,7 +17,25 @@
           :bind="true">
         </chartjs-line>
       </div>
+      <div class="cards">
+        <div class="col s4">
+          <div class="card blue darken-2">
+            <div class="card-content white-text">
+              <span class="card-title">Similar Households</span>
+              <p>{{ avargeUsage }}</p>
+            </div>
+          </div>
+      </div>
+      <div class="col s4">
+        <div class="card blue darken-2">
+          <div class="card-content white-text">
+            <span class="card-title">Your Household</span>
+            <p>{{ myUsage }}</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -30,6 +48,9 @@ export default {
     return {
       // all submits (from firestore)
       submits: [],
+      // last submit
+      myUsage: null,
+      avargeUsage: null,
       // chart data
       labels: [],
       dataset: [],
@@ -51,6 +72,10 @@ export default {
       for (let submit of Object.values(this.submits)) {
         this.dataset.push(submit.usage)
       }
+    },
+    addUsage () {
+      this.myUsage = this.submits[0].usage
+      // this.avargeUsage = submits.
     }
   },
   created () {
@@ -64,6 +89,7 @@ export default {
       }).then(submits => {
         this.addChartLabels()
         this.addChartdataset()
+        this.addUsage()
       })
   }
 }
