@@ -2,19 +2,18 @@
   <div>
     <navbar />
     <router-view />
-    <Footer />
+    <Foot />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import Foot from '@/components/Foot'
 
 export default {
   components: {
-    // Add a reference to the AddSubmit component in the components property
     Navbar,
-    Footer
+    Foot
   }
 }
 </script>

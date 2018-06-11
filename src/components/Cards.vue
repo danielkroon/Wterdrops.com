@@ -1,7 +1,7 @@
 <template>
 <div class="cards">
   <div class="row">
-    <div class="col s10 m6">
+    <div class="col s6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Similar Households</span>
@@ -9,11 +9,11 @@
         </div>
       </div>
     </div>
-    <div class="col s10 m6">
+    <div class="col s6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Your Household</span>
-          <p>1234</p>
+          <p>{{ submits[0].usage }}</p>
         </div>
       </div>
     </div>
@@ -24,6 +24,9 @@
 <script>
 export default {
   name: 'Cards',
+  props: [
+    'submits'
+  ],
   data () {
     return {
 
@@ -34,6 +37,6 @@ export default {
 
 <style>
 .cards {
-  margin: 10px 50px;
+  margin: 20px 20px 0 20px;
 }
 </style>

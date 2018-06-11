@@ -20,6 +20,7 @@
 
 <script>
 import db from '@/firebase/init'
+import moment from 'moment'
 
 export default {
   name: 'submits',
@@ -46,6 +47,7 @@ export default {
         snaptshot.forEach(doc => {
           let submit = doc.data()
           submit.id = doc.id
+          submit.timestamp = moment(doc.data().timestamp).format('lll')
           this.submits.push(submit)
         })
       })

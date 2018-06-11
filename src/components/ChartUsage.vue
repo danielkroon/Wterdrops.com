@@ -1,7 +1,7 @@
 <template>
   <div class="check-usage">
     <div class="row">
-      <div class="col s8">
+      <div class="col s12">
         <chartjs-line
           :fill="true"
           :datalabel="'My consumption'"
@@ -17,30 +17,13 @@
           :bind="true">
         </chartjs-line>
       </div>
-      <div class="cards">
-        <div class="col s4">
-          <div class="card blue darken-2">
-            <div class="card-content white-text">
-              <span class="card-title">Similar Households</span>
-              <p>{{ avargeUsage }}</p>
-            </div>
-          </div>
-      </div>
-      <div class="col s4">
-        <div class="card blue darken-2">
-          <div class="card-content white-text">
-            <span class="card-title">Your Household</span>
-            <p>{{ myUsage }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   </div>
 </template>
 
 <script>
 import db from '@/firebase/init'
+import moment from 'moment'
 
 export default {
   name: 'Chartusage',
@@ -84,6 +67,7 @@ export default {
         snaptshot.forEach(doc => {
           let submit = doc.data()
           submit.id = doc.id
+          submit.timestamp = moment(doc.data().timestamp).format('L')
           this.submits.push(submit)
         })
       }).then(submits => {
@@ -96,4 +80,7 @@ export default {
 </script>
 
 <style>
+.check-usage {
+  margin: 20px 20px 0 20px;
+}
 </style>

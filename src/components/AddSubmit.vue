@@ -27,7 +27,6 @@
 <script>
 import moment from 'moment'
 import db from '@/firebase/init'
-import slugify from 'slugify'
 
 export default {
   name: 'AddSubmit',
@@ -39,8 +38,7 @@ export default {
       increasePerDay: null,
       // // create number array
       number: null,
-      timestamp: '',
-      slug: null,
+      timestamp: null,
       usage: null,
       feedback: null
     }
@@ -50,13 +48,6 @@ export default {
       // add number
       if (this.number) {
         this.feedback = null
-        // create a slug
-        this.timestamp = moment().format('lll')
-        this.slug = slugify(this.timestamp, {
-          replacement: '-',
-          remove: /[$*_+~.,()'"!\-:@]/g,
-          lower: true
-        })
 
         if (this.submits.length < 1) {
           console.log('submits is empty')
@@ -76,8 +67,7 @@ export default {
         // add to database
         db.collection('submits').add({
           number: this.number,
-          timestamp: this.timestamp,
-          slug: this.slug,
+          timestamp: Date.now(),
           usage: this.usage
         }).then(() => {
           this.$router.push({name: 'Submits'})
