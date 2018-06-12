@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <navbar />
     <router-view />
     <Foot />
@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
-import Foot from '@/components/Foot'
+import Navbar from '@/components/layout/Navbar'
+import Foot from '@/components/layout/Foot'
 
 export default {
   components: {
@@ -19,4 +19,7 @@ export default {
 </script>
 
 <style>
+.body {
+  background-color: #eee;
+}
 </style>

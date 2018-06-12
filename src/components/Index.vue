@@ -8,8 +8,8 @@
 <script>
 import db from '@/firebase/init'
 import moment from 'moment'
-import Chartusage from '@/components/ChartUsage'
-import Cards from '@/components/Cards'
+import Chartusage from '@/components/dashboard/ChartUsage'
+import Cards from '@/components/dashboard/Cards'
 
 export default {
   name: 'Index',

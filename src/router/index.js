@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import Submits from '@/components/Submits'
 import AddSubmit from '@/components/AddSubmit'
-import ChartUsage from '@/components/ChartUsage'
+import ChartUsage from '@/components/dashboard/ChartUsage'
 
 Vue.use(Router)
 

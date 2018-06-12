@@ -2,20 +2,22 @@
   <div class="check-usage">
     <div class="row">
       <div class="col s12">
-        <chartjs-line
-          :fill="true"
-          :datalabel="'My consumption'"
-          :labels="labels"
-          :data="dataset"
-          :bordercolor="'#1976D2'"
-          :backgroundcolor="'rgba(25,118,210, 0.5)'"
-          :pointborderwidth="mywidth"
-          :pointbordercolor="mypointbordercolor"
-          :pointhoverborderwidth="hoverwidth"
-          :pointhoverbackgroundcolor="hoverbackgroundcolor"
-          :pointhoverbordercolor="hoverbordercolor"
-          :bind="true">
-        </chartjs-line>
+        <div class="chart">
+          <chartjs-line
+            :fill="true"
+            :datalabel="'My consumption'"
+            :labels="labels"
+            :data="dataset"
+            :bordercolor="'#1976D2'"
+            :backgroundcolor="'rgba(25,118,210, 0.5)'"
+            :pointborderwidth="mywidth"
+            :pointbordercolor="mypointbordercolor"
+            :pointhoverborderwidth="hoverwidth"
+            :pointhoverbackgroundcolor="hoverbackgroundcolor"
+            :pointhoverbordercolor="hoverbordercolor"
+            :bind="true">
+          </chartjs-line>
+          </div>
       </div>
   </div>
   </div>
@@ -81,6 +83,12 @@ export default {
 
 <style>
 .check-usage {
-  margin: 20px 20px 0 20px;
+  margin: 20px 20px 30px 20px;
+  box-shadow: 0 4px 70px -18px #707070;
+  padding: 10px;
+}
+
+.chart {
+  padding: 10px;
 }
 </style>
