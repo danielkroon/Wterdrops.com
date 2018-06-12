@@ -4,7 +4,7 @@
       <form class="col s12" @submit.prevent="addSubmit">
         <div class="row">
           <div class="input-field col s6  offset-m3">
-            Vul je watermeterstand(M&#179;) in:
+            Please fill in your water meter reading(M&#179;):
             <input id="numberInput" class="validate" v-model.number="number" type="number" placeholder="1234"/>
             <label for="numberInput"></label>
           </div>
