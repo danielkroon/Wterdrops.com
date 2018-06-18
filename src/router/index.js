@@ -5,25 +5,35 @@ import Submits from '@/components/Submits'
 import AddSubmit from '@/components/AddSubmit'
 import Signup from '@/components/auth/Signup'
 import Login from '@/components/auth/Login'
+import firebase from 'firebase'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
       name: 'Index',
-      component: Index
+      component: Index,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/submits',
       name: 'Submits',
-      component: Submits
+      component: Submits,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/add',
       name: 'AddSubmit',
-      component: AddSubmit
+      component: AddSubmit,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/signup',
@@ -37,3 +47,23 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  // check to see if route requires auth
+  if (to.matched.some(rec => rec.meta.requiresAuth)) {
+    // check auth state of user
+    let user = firebase.auth().currentUser
+    // if user is true
+    if (user) {
+      // user signed in, proceed to route
+      next()
+    } else {
+      // no user signed in, redirect to login
+      next({ name: 'Login' })
+    }
+  } else {
+    next()
+  }
+})
+
+export default router
