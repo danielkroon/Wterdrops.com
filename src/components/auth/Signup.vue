@@ -57,6 +57,15 @@ export default {
             this.feedback = 'This alias already exists'
           } else {
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+              .then(cred => {
+                ref.set({
+                  alias: this.alias,
+                  household: this.household,
+                  user_id: cred.user.uid
+                })
+              }).then(() => {
+                this.$router.push({ name: 'Index' })
+              })
               .catch(err => {
                 console.log(err)
                 this.feedback = err.message

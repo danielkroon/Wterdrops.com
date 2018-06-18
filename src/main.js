@@ -5,15 +5,24 @@ import App from './App'
 import router from './router'
 import 'chart.js'
 import 'hchs-vue-charts'
+import firebase from 'firebase'
 
 Vue.use(window.VueCharts)
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+let app = null
+
+// wait for firebase auth to init before creating the app
+firebase.auth().onAuthStateChanged(() => {
+  // init app if not already created
+  if (!app) {
+    /* eslint-disable no-new */
+    app = new Vue({
+      el: '#app',
+      router,
+      components: { App },
+      template: '<App/>'
+    })
+  }
 })

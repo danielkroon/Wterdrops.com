@@ -7,6 +7,7 @@
 
 <script>
 import db from '@/firebase/init'
+import firebase from 'firebase'
 import moment from 'moment'
 import Chartusage from '@/components/dashboard/ChartUsage'
 import Cards from '@/components/dashboard/Cards'
@@ -33,8 +34,10 @@ export default {
           this.submits.push(submit)
         })
       })
+  },
+  mounted () {
+    console.log(firebase.auth().currentUser)
   }
-
 }
 </script>
 
