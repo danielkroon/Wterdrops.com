@@ -4,6 +4,7 @@ import Index from '@/components/Index'
 import Submits from '@/components/Submits'
 import AddSubmit from '@/components/AddSubmit'
 import Signup from '@/components/auth/Signup'
+import Login from '@/components/auth/Login'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/signup',
       name: 'Signup',
       component: Signup
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })

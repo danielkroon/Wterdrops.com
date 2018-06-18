@@ -19,7 +19,7 @@
                       </router-link>
                     </li>
                     <li>
-                      <router-link :to="{ name: '' }">
+                      <router-link :to="{ name: 'Login' }">
                             Login
                       </router-link>
                     </li>
@@ -45,7 +45,7 @@ export default {
   methods: {
     logout () {
       firebase.auth().signOut().then(() => {
-        this.$router.push({ name: 'Signup' })
+        this.$router.push({ name: 'Login' })
       })
     }
   }
