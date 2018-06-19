@@ -38,9 +38,9 @@ export default {
       lastSubmitted: null,
       increasePerDay: null,
       // // create number array
-      number: null,
+      number: 0,
       timestamp: null,
-      usage: null,
+      usage: 0,
       feedback: null,
       currentUser: null
     }

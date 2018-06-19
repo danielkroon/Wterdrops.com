@@ -34,7 +34,7 @@ export default {
       // all submits (from firestore)
       submits: [],
       // last submit
-      myUsage: null,
+      myUsage: 0,
       avargeUsage: null,
       // chart data
       labels: [],
@@ -60,7 +60,6 @@ export default {
     },
     addUsage () {
       this.myUsage = this.submits[0].usage
-      // this.avargeUsage = submits.
     }
   },
   created () {

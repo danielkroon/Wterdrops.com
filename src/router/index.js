@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/Index'
+import Dashboard from '@/components/Dashboard'
 import Submits from '@/components/Submits'
 import AddSubmit from '@/components/AddSubmit'
 import Signup from '@/components/auth/Signup'
@@ -13,8 +13,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
-      component: Index,
+      name: 'Dashboard',
+      component: Dashboard,
       meta: {
         requiresAuth: true
       }

@@ -16,7 +16,7 @@
       </div>
       <div class="field">
         <label for="household">Household size:</label>
-        <input type="number" name="household" v-model="household">
+        <input type="number" name="household" v-model.number="household">
       </div>
       <p class="center red-text" v-if="feedback">{{ feedback }}</p>
       <div class="field center">
@@ -64,7 +64,7 @@ export default {
                   user_id: cred.user.uid
                 })
               }).then(() => {
-                this.$router.push({ name: 'Index' })
+                this.$router.push({ name: 'Dashboard' })
               })
               .catch(err => {
                 console.log(err)
