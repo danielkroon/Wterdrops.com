@@ -27,6 +27,7 @@
 <script>
 import moment from 'moment'
 import db from '@/firebase/init'
+import firebase from 'firebase'
 
 export default {
   name: 'AddSubmit',
@@ -40,11 +41,14 @@ export default {
       number: null,
       timestamp: null,
       usage: null,
-      feedback: null
+      feedback: null,
+      currentUser: null
     }
   },
   methods: {
     addSubmit () {
+      let user = firebase.auth().currentUser
+
       // add number
       if (this.number) {
         this.feedback = null
@@ -64,19 +68,40 @@ export default {
         let diffStat = Math.abs(this.number - this.lastSubmitted.number)
         this.usage = (diffStat / diffDays).toFixed(2)
 
-        // add to database
-        db.collection('submits').add({
-          number: this.number,
-          timestamp: Date.now(),
-          usage: this.usage
-        }).then(() => {
-          this.$router.push({name: 'Submits'})
-        }).catch(err => {
-          console.log(err)
-        })
+        // find the user record and the update the users number
+        db.collection('users').where('user_id', '==', user.uid).get()
+          .then(snapshot => {
+            snapshot.forEach((doc) => {
+              // update user record in firestore
+              console.log(doc)
+              db.collection('users').doc(doc.id).update({
+                number: this.number,
+                timestamp: Date.now(),
+                usage: this.usage
+              })
+            })
+          }).then(() => {
+            this.$router.push({name: 'Submits'})
+          }).catch(err => {
+            console.log(err)
+          })
       } else {
         this.feedback = 'You must enter a number to submit a new number.'
       }
+
+      //   // add to database
+      //   db.collection('submits').add({
+      //     number: this.number,
+      //     timestamp: Date.now(),
+      //     usage: this.usage
+      //   }).then(() => {
+      //     this.$router.push({name: 'Submits'})
+      //   }).catch(err => {
+      //     console.log(err)
+      //   })
+      // } else {
+      //   this.feedback = 'You must enter a number to submit a new number.'
+      // }
     }
   },
   created () {
