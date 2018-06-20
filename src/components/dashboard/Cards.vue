@@ -12,7 +12,7 @@
     <div class="col s6">
       <div class="card blue darken-2">
         <div class="card-content white-text">
-          <span class="card-title">{{ currentuserData[0].usage }} (M&#179;)</span>
+          <span class="card-title">{{ userDataProp.usage }} (M&#179;)</span>
           <p>Your Household</p>
         </div>
       </div>
@@ -24,18 +24,20 @@
 <script>
 export default {
   name: 'Cards',
-  props: [
-    'userDataProp'
-  ],
+  props: {
+    userDataProp: {
+      type: Object,
+      required: true
+    }
+  },
   data () {
     return {
-      currentuserData: this.userDataProp,
       similarHousehold: 0
     }
   },
   methods: {
     checkSimilarHousehold () {
-      let household = this.currentuserData[0].household
+      let household = this.userDataProp.household
 
       if (household === 1) {
         // 1-person households use 52,000 litres per year.

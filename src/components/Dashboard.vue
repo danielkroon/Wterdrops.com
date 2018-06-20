@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      currentUserData: []
+      currentUserData: {}
     }
   },
   created () {
@@ -32,7 +32,7 @@ export default {
         snapshot.forEach((doc) => {
           let userData = doc.data()
           userData.timestamp = moment(doc.data().timestamp).format('lll')
-          this.currentUserData.push(userData)
+          this.currentUserData = userData
           console.log(this.currentUserData)
         })
       })
