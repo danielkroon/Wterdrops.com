@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <cards :userDataProp="currentUserData"/>
-    <chartusage />
+    <chartusage :userDataProp="currentUserData" />
   </div>
 </template>
 
