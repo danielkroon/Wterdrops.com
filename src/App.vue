@@ -19,7 +19,10 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .body {
   background-color: #eee;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif
 }
 </style>

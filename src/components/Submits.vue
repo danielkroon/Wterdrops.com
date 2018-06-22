@@ -3,13 +3,13 @@
     <h1>submits</h1>
     <div class="row">
       <div class="col s6 offset-s3">
-        <div class="submit" v-for="submit in submits" :key="submit.id" >
+        <div class="submit" v-for="previousSubmits in previousSubmits" :key="previousSubmits.id" >
           <ul class="collection">
             <li class="collection-item">
-              <i class="material-icons circle delete" @click="deleteSubmit(submit.id)">delete</i>
-              <p><b>Meter reading: </b>{{ submit.number }}</p>
-              <p><b>Average use: </b> {{submit.usage}}</p>
-              <p><b>Date: </b>{{ submit.timestamp }}</p>
+              <i class="material-icons circle delete" @click="deleteSubmit(previousSubmits.id)">delete</i>
+              <p><b>Meter reading: </b>{{ previousSubmits.number }}</p>
+              <p><b>Average use: </b> {{previousSubmits.usage}}</p>
+              <p><b>Date: </b>{{ previousSubmits.timestamp }}</p>
             </li>
           </ul>
         </div>
@@ -21,12 +21,13 @@
 <script>
 import db from '@/firebase/init'
 import moment from 'moment'
+import firebase from 'firebase'
 
 export default {
   name: 'submits',
   data () {
     return {
-      submits: []
+      previousSubmits: []
     }
   },
   methods: {
@@ -34,22 +35,34 @@ export default {
       // delete doc from firestore
       db.collection('submits').doc(id).delete()
         .then(() => {
-          this.submits = this.submits.filter(submit => {
+          this.previousSubmits = this.previousSubmits.filter(submit => {
             return submit.id !== id
           })
         })
     }
   },
   created () {
-    // fetch data from the firestore
-    db.collection('submits').orderBy('timestamp', 'desc').get()
-      .then(snaptshot => {
-        snaptshot.forEach(doc => {
-          let submit = doc.data()
-          submit.id = doc.id
-          submit.timestamp = moment(doc.data().timestamp).format('lll')
-          this.submits.push(submit)
+    let ref = db.collection('users')
+
+    // get current user
+    ref.where('user_id', '==', firebase.auth().currentUser.uid).get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          this.user = doc.data()
+          this.user = doc.id
         })
+      })
+      .then(() => {
+        // fetch the user previous submits from the firestore
+        db.collection('submits').where('user', '==', this.user).get()
+          .then(snapshot => {
+            snapshot.forEach(doc => {
+              let submit = doc.data()
+              submit.id = doc.id
+              submit.timestamp = moment(doc.data().timestamp).format('lll')
+              this.previousSubmits.push(submit)
+            })
+          })
       })
   }
 }
