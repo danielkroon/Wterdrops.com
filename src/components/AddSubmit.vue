@@ -38,7 +38,6 @@ export default {
       // data to calculate usage
       previousSubmits: [],
       lastSubmitted: null,
-      increasePerDay: null,
       // submit data
       number: 0,
       timestamp: null,
@@ -54,8 +53,7 @@ export default {
         this.feedback = null
 
         if (this.previousSubmits.length < 1) {
-          console.log('usage is 0')
-          this.usage = 0
+          this.usage = 0.278
         } else {
           this.lastSubmitted = this.previousSubmits[0]
 
@@ -77,7 +75,18 @@ export default {
           usage: this.usage
         })
           .then(() => {
-            this.$router.push({name: 'Submits'})
+            db.collection('users').where('alias', '==', this.user).get()
+              .then(snapshot => {
+                snapshot.forEach((doc) => {
+                  // update user record in firestore
+                  db.collection('users').doc(doc.id).update({
+                    usage: this.usage
+                  })
+                })
+              })
+          })
+          .then(() => {
+            this.$router.push({name: 'Dashboard'})
           }).catch(err => {
             console.log(err)
           })
@@ -95,7 +104,6 @@ export default {
         snapshot.forEach(doc => {
           this.user = doc.data()
           this.user = doc.id
-          console.log(this.user)
         })
       })
       .then(() => {
@@ -108,7 +116,6 @@ export default {
               submit.id = doc.id
               submit.timestamp = moment(doc.data().timestamp).format('lll')
               this.previousSubmits.push(submit)
-              console.log(this.previousSubmits)
             })
           })
       })

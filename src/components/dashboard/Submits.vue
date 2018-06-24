@@ -1,6 +1,6 @@
 <template>
   <div class="submits">
-    <h1>submits</h1>
+    <h2 class="center">submits</h2>
     <div class="row">
       <div class="col s6 offset-s3">
         <div class="submit" v-for="previousSubmits in previousSubmits" :key="previousSubmits.id" >
@@ -61,6 +61,13 @@ export default {
               submit.id = doc.id
               submit.timestamp = moment(doc.data().timestamp).format('lll')
               this.previousSubmits.push(submit)
+
+              // sort previousSubmits array by date
+              this.previousSubmits.sort((a, b) => {
+                a = new Date(a.timestamp)
+                b = new Date(b.timestamp)
+                return b - a
+              })
             })
           })
       })

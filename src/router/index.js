@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Dashboard from '@/components/Dashboard'
-import Submits from '@/components/Submits'
 import AddSubmit from '@/components/AddSubmit'
 import Signup from '@/components/auth/Signup'
 import Login from '@/components/auth/Login'
@@ -15,14 +14,6 @@ const router = new Router({
       path: '/',
       name: 'Dashboard',
       component: Dashboard,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/submits',
-      name: 'Submits',
-      component: Submits,
       meta: {
         requiresAuth: true
       }

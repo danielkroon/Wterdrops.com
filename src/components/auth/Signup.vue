@@ -37,7 +37,7 @@ export default {
     return {
       email: null,
       password: null,
-      household: null,
+      household: 0,
       alias: null,
       feedback: null,
       slug: null

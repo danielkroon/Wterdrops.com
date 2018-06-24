@@ -5,7 +5,7 @@
         <div class="chart">
           <chartjs-line
             :fill="true"
-            :datalabel="'My consumption'"
+            :datalabel="'My household usage'"
             :labels="labels"
             :data="dataset"
             :bordercolor="'#1976D2'"
@@ -24,18 +24,16 @@
 </template>
 
 <script>
-import db from '@/firebase/init'
-import moment from 'moment'
-
 export default {
   name: 'Chartusage',
+  props: {
+    userSubmitsProp: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
-      // all submits (from firestore)
-      submits: [],
-      // last submit
-      myUsage: 0,
-      avargeUsage: null,
       // chart data
       labels: [],
       dataset: [],
@@ -49,33 +47,28 @@ export default {
   },
   methods: {
     addChartLabels () {
-      for (let submit of Object.values(this.submits)) {
+      for (let submit of Object.values(this.userSubmitsProp)) {
         this.labels.push(submit.timestamp)
       }
     },
     addChartdataset () {
-      for (let submit of Object.values(this.submits)) {
+      for (let submit of Object.values(this.userSubmitsProp)) {
         this.dataset.push(submit.usage)
       }
     },
-    addUsage () {
-      this.myUsage = this.submits[0].usage
+    formatChartData () {
+      // sort previousSubmits array by date descending
+      this.userSubmitsProp.sort((a, b) => {
+        a = new Date(a.timestamp)
+        b = new Date(b.timestamp)
+        return a - b
+      })
     }
   },
-  created () {
-    db.collection('submits').orderBy('timestamp', 'desc').get()
-      .then(snaptshot => {
-        snaptshot.forEach(doc => {
-          let submit = doc.data()
-          submit.id = doc.id
-          submit.timestamp = moment(doc.data().timestamp).format('L')
-          this.submits.push(submit)
-        })
-      }).then(submits => {
-        this.addChartLabels()
-        this.addChartdataset()
-        this.addUsage()
-      })
+  mounted () {
+    this.formatChartData()
+    this.addChartLabels()
+    this.addChartdataset()
   }
 }
 </script>
