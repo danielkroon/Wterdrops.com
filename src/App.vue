@@ -19,10 +19,10 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .body {
-  background-color: #eee;
-  font-family: 'Lato', Arial, Helvetica, sans-serif
+  background-color: #f4f4f4;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 </style>

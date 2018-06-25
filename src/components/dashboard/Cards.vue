@@ -1,31 +1,29 @@
 <template>
 <div class="cards">
-  <div class="row no-margin ">
-    <div class="col s6">
-      <div class="card blue darken-2">
-        <div class="card-content white-text">
-          <p>Usage in similar households</p>
-          <span class="card-title">{{ similarHousehold }} (M&#179;)</span>
-        </div>
+  <div class="col m6 s12">
+    <div class="card">
+      <div class="card-content">
+        <div>Usage in similar households</div>
+        <div class="card-value">{{ similarHousehold }} (M&#179;)</div>
       </div>
     </div>
-    <div class="col s6">
-      <div class="card blue darken-2">
-        <div class="card-content white-text">
-           <p>Usage in your household</p>
-          <span class="card-title" v-if="userDataProp.usage >= 0">{{ userDataProp.usage }} (M&#179;)</span>
-          <span class="card-title" v-else>No data to display.
-            <a href="" class="waves-effect waves-light btn  blue lighten-1">
-                <router-link :to="{ name: 'AddSubmit' }">
-                      Add data
-                </router-link>
-            </a>
-          </span>
+  </div>
+  <div class="col m6 s12">
+    <div class="card">
+      <div class="card-content">
+        <div>Usage in your household</div>
+        <div class="card-value" v-if="userDataProp.usage >= 0">{{ userDataProp.usage }} (M&#179;)</div>
+        <div class="card-value" v-else>No data to display.
+          <a href="" class="waves-effect waves-light btn  blue lighten-1">
+              <router-link :to="{ name: 'AddSubmit' }">
+                    Add data
+              </router-link>
+          </a>
         </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -70,17 +68,12 @@ export default {
 </script>
 
 <style>
-.cards {
-  margin: 20px 20px 30px 20px;
-  box-shadow: 0 4px 70px -18px #707070;
-  padding: 10px;
-}
-
-.no-margin {
-  margin: 0px;
-}
-
 a {
   color: white;
+}
+
+.card-value {
+  font-size: 26px;
+  font-weight: 300;
 }
 </style>

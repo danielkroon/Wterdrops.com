@@ -1,9 +1,9 @@
 <template>
   <div class="submits">
-    <h2 class="center">submits</h2>
-    <div class="row">
-      <div class="col s6 offset-s3">
-        <div class="submit" v-for="previousSubmits in previousSubmits" :key="previousSubmits.id" >
+    <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <!-- <div class="submit" v-for="previousSubmits in previousSubmits" :key="previousSubmits.id" >
           <ul class="collection">
             <li class="collection-item">
               <i class="material-icons circle delete" @click="deleteSubmit(previousSubmits.id)">delete</i>
@@ -12,8 +12,31 @@
               <p><b>Date: </b>{{ previousSubmits.timestamp }}</p>
             </li>
           </ul>
-        </div>
+        </div> -->
+
+         <table>
+            <thead>
+              <tr>
+                <th>Meter reading</th>
+                <th>Average use</th>
+                <th>Date</th>
+                <th>Delete</th>
+              </tr>
+               </thead>
+              <tbody>
+              <tr class="submit" v-for="previousSubmits in previousSubmits" :key="previousSubmits.id" >
+                  <td>{{ previousSubmits.number }}</td>
+                  <td>{{previousSubmits.usage}}</td>
+                  <td>{{ previousSubmits.timestamp }}</td>
+                  <td>
+                    <i class="material-icons circle delete" @click="deleteSubmit(previousSubmits.id)">delete</i>
+                  </td>
+                </tr>
+              </tbody>
+
+          </table>
       </div>
+  </div>
   </div>
   </div>
 </template>
@@ -77,10 +100,7 @@ export default {
 
 <style>
    .delete {
-    position: absolute;
     cursor: pointer;
-    top: 4px;
-    right: 4px;
     font-size: 1.4em;
   }
 </style>

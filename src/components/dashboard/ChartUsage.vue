@@ -1,25 +1,27 @@
 <template>
   <div class="check-usage">
-    <div class="row">
       <div class="col s12">
-        <div class="chart">
-          <chartjs-line
-            :fill="true"
-            :datalabel="'My household usage'"
-            :labels="labels"
-            :data="dataset"
-            :bordercolor="'#1976D2'"
-            :backgroundcolor="'rgba(25,118,210, 0.5)'"
-            :pointborderwidth="mywidth"
-            :pointbordercolor="mypointbordercolor"
-            :pointhoverborderwidth="hoverwidth"
-            :pointhoverbackgroundcolor="hoverbackgroundcolor"
-            :pointhoverbordercolor="hoverbordercolor"
-            :bind="true">
-          </chartjs-line>
+        <div class="card">
+          <div class="card-content">
+              <div class="chart">
+              <chartjs-line
+                :fill="true"
+                :datalabel="'My household usage'"
+                :labels="labels"
+                :data="dataset"
+                :bordercolor="'#1976D2'"
+                :backgroundcolor="'rgba(25,118,210, 0.5)'"
+                :pointborderwidth="mywidth"
+                :pointbordercolor="mypointbordercolor"
+                :pointhoverborderwidth="hoverwidth"
+                :pointhoverbackgroundcolor="hoverbackgroundcolor"
+                :pointhoverbordercolor="hoverbordercolor"
+                :bind="true">
+              </chartjs-line>
           </div>
+          </div>
+        </div>
       </div>
-  </div>
   </div>
 </template>
 
@@ -74,13 +76,4 @@ export default {
 </script>
 
 <style>
-.check-usage {
-  margin: 20px 20px 30px 20px;
-  box-shadow: 0 4px 70px -18px #707070;
-  padding: 10px;
-}
-
-.chart {
-  padding: 10px;
-}
 </style>

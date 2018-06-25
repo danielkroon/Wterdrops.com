@@ -1,8 +1,13 @@
 <template>
   <div class="dashboard">
-    <cards :userDataProp="currentUserData"/>
-    <chartusage v-if="previousSubmits.length > 0" :user-submits-prop="previousSubmits" />
-    <submits />
+    <div class="row">
+      <div class="col s12">
+        <h2>Dashboard</h2>
+      <cards :userDataProp="currentUserData"/>
+      <chartusage v-if="previousSubmits.length > 0" :user-submits-prop="previousSubmits" />
+      <submits />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -63,4 +68,10 @@ export default {
 </script>
 
 <style>
+.dashboard {
+  max-width: 1280px;
+  margin-top: 20px;
+  margin: 0 auto;
+  width: 85%;
+}
 </style>

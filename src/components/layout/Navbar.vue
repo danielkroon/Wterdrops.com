@@ -1,11 +1,11 @@
 <template>
-    <div class="navbar">
-        <nav class="nav-extend blue darken-2">
+    <div class="navbar-fixed">
+        <nav class="nav-extend white">
             <div class="nav-content">
                 <router-link to="/">
-                    <span class="nav-title">Waterstats</span>
+                    <a class="brand-logo grey-text text-darken-4">Waterstats</a>
                 </router-link>
-                <ul class="right hide-on-small-and-down">
+                <ul class="right">
                     <li v-if="user">
                         <a href="" class="waves-effect waves-light btn  blue lighten-1">
                             <router-link :to="{ name: 'AddSubmit' }">
@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style>
-.navbar .nav-title {
-    padding: 0px 0px 0px 10px;
+nav ul a {
+  color: black;
 }
 </style>
