@@ -6,13 +6,6 @@
                     <a class="brand-logo grey-text text-darken-4">Waterstats</a>
                 </router-link>
                 <ul class="right">
-                    <li v-if="user">
-                        <a href="" class="waves-effect waves-light btn  blue lighten-1">
-                            <router-link :to="{ name: 'AddSubmit' }">
-                                 Add
-                            </router-link>
-                        </a>
-                    </li>
                     <li v-if="!user">
                       <router-link :to="{ name: 'Signup' }">
                             Signup

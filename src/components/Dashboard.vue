@@ -8,6 +8,13 @@
       <submits />
       </div>
     </div>
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large btn-floating pulse blue lighten-1">
+        <router-link :to="{ name: 'AddSubmit' }">
+          <i class="large material-icons">add</i>
+          </router-link>
+      </a>
+    </div>
   </div>
 </template>
 
