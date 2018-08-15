@@ -68,10 +68,6 @@ export default {
 </script>
 
 <style>
-a {
-  color: white;
-}
-
 .card-value {
   font-size: 26px;
   font-weight: 300;

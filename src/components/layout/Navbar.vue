@@ -1,31 +1,50 @@
 <template>
-    <div class="navbar-fixed">
-        <nav class="nav-extend white">
-            <div class="nav-content">
-                <router-link to="/">
-                    <a class="brand-logo grey-text text-darken-4">Waterstats</a>
-                </router-link>
-                <ul class="right">
-                    <li v-if="!user">
-                      <router-link :to="{ name: 'Signup' }">
-                            Signup
-                      </router-link>
-                    </li>
-                    <li v-if="!user">
-                      <router-link :to="{ name: 'Login' }">
-                            Login
-                      </router-link>
-                    </li>
-                    <li v-if="user">
-                      <a>{{ user.email }}</a>
-                    </li>
-                    <li v-if="user">
-                      <a @click="logout">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+<nav class="navbar is-transparent">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <router-link to="/">
+      <img src="@/assets/logo.svg" alt="Wterdrops">
+      </router-link>
+      </a>
+    <div class="navbar-burger burger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        How it works
+      </a>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control" v-if="!user">
+            <a class="button">
+               <router-link :to="{ name: 'Login' }">
+                    Login
+                 </router-link>
+            </a>
+          </p>
+          <p class="control" v-if="!user">
+            <a class="button white-text is-primary" >
+              <router-link :to="{ name: 'Signup' }">
+                Signup
+              </router-link>
+            </a>
+          </p>
+          <a class="button" v-if="user">
+              <a @click="logout">Logout</a>
+            </a>
+        </div>
+      </div>
+    </div>
+</nav>
 </template>
 
 <script>
@@ -58,8 +77,10 @@ export default {
 }
 </script>
 
-<style>
-nav ul a {
-  color: black;
+<style lang="scss">
+.white-text {
+  a {
+    color: white;
+  }
 }
 </style>

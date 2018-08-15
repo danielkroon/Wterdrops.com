@@ -6,6 +6,10 @@ import router from './router'
 import 'chart.js'
 import 'hchs-vue-charts'
 import firebase from 'firebase'
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
+
+Vue.use(Buefy)
 
 Vue.use(window.VueCharts)
 

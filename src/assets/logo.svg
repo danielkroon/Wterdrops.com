@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="591px" height="74px" viewBox="0 0 591 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>logo-black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(0.000000, -1.000000)">
+            <g id="logo-black" transform="translate(-11.000000, -21.000000)">
+                <text id="terdrops.com" font-family="Comfortaa-Bold, Comfortaa" font-size="72" font-weight="bold" fill="#000000">
+                    <tspan x="104.86" y="79">terdrops.com </tspan>
+                </text>
+                <text id="w" font-family="Comfortaa-Bold, Comfortaa" font-size="72" font-weight="bold" fill="#000000">
+                    <tspan x="10.792" y="79">w </tspan>
+                </text>
+                <path d="M100,64.4174622 C100,72.5188455 93.2456414,79 85,79 C76.7543586,79 70,72.5188455 70,64.4174622 C70,56.316079 83.3874163,40 85,40 C86.6125837,40 100,56.4013037 100,64.4174622 Z" id="Shape" fill="#42A2FF" fill-rule="nonzero"></path>
+                <path d="M92.3338724,47.0916208 L92.6302292,46.5028909 C93.0666916,45.6358335 93.4892138,45.9065187 93.573959,47.1074832 L94.4754466,59.8828979 C94.5601918,61.0838624 93.8194823,61.3545476 92.8210256,60.4874901 L92.143076,59.8987603 C91.1446193,59.0317028 90.4039098,57.7792045 90.488655,57.101227 L91.3901427,49.8891541 C91.4748878,49.2111765 91.89741,47.9586782 92.3338724,47.0916208 Z" id="Rectangle-2" fill="#FFFFFF" transform="translate(92.482051, 53.495191) rotate(-30.000000) translate(-92.482051, -53.495191) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
