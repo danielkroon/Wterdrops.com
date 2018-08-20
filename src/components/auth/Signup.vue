@@ -1,29 +1,40 @@
 <template>
-  <div class="signup container">
-    <form  @submit.prevent="signup" class="card-panel">
-      <h2 class="center">Signup</h2>
-      <div class="field">
-        <label for="email">Email:</label>
-        <input type="email" name="email" v-model="email">
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column"> </div>
+        <div class="column is-half">
+          <div class="box">
+            <h1 class="title">Signup</h1>
+            <form @submit.prevent="signup">
+              <b-field label="Email" :message="feedback" :type="type">
+                <b-input placeholder="Email" icon="email" type="email" v-model="email">
+                </b-input>
+              </b-field>
+              <b-field label="Password" :message="feedback" :type="type">
+                <b-input placeholder="Password" icon="textbox-password" type="password" password-reveal v-model="password">
+                </b-input>
+              </b-field>
+              <b-field label="Alias" :message="feedback" :type="type">
+                <b-input placeholder="Alias" icon="account" type="text" v-model="alias" required>
+                </b-input>
+              </b-field>
+              <b-field label="Household size">
+                <b-select placeholder="Select household size" v-model="household" required>
+                  <option v-for="option in household" :value="option.value" :key="option.value">
+                    {{ option }}
+                  </option>
+                </b-select>
+              </b-field>
+              <button type="submit" class="button is-primary is-fullwidth">Signup</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="column"></div>
       </div>
-      <div class="field">
-        <label for="password">Password:</label>
-        <input type="password" name="password" v-model="password">
-      </div>
-      <div class="field">
-        <label for="alias">Alias:</label>
-        <input type="text" name="alias" v-model="alias">
-      </div>
-      <div class="field">
-        <label for="household">Household size:</label>
-        <input type="number" name="household" v-model.number="household">
-      </div>
-      <p class="center red-text" v-if="feedback">{{ feedback }}</p>
-      <div class="field center">
-        <button class="btn blue lighten-1">Signup</button>
-      </div>
-    </form>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -37,10 +48,11 @@ export default {
     return {
       email: null,
       password: null,
-      household: 0,
+      household: [1, 2, 3, 4, 'More than 4'],
       alias: null,
       feedback: null,
-      slug: null
+      slug: null,
+      type: null
     }
   },
   methods: {
@@ -83,10 +95,10 @@ export default {
 </script>
 
 <style>
-  .signup {
-    max-width: 400px;
-    margin-top: 60px;
-  }
+.signup {
+  max-width: 400px;
+  margin-top: 60px;
+}
 
 .signup h2 {
   font-size: 2.4em;

@@ -7,20 +7,22 @@
           <div class="box">
             <h1 class="title">Login</h1>
             <form @submit.prevent="login">
-              <b-field label="Email" message="feedback">
+              <b-field label="Email" :message="feedback" :type="type">
                 <b-input placeholder="Email" icon="email" type="email" v-model="email">
                 </b-input>
               </b-field>
-              <b-field label="Password">
+              <b-field label="Password" :message="feedback" :type="type">
                 <b-input placeholder="Password" type="password" icon="textbox-password" password-reveal v-model="password">
                 </b-input>
               </b-field>
               <button type="submit" class="button is-primary is-fullwidth">Login</button>
               <div class="field">
                 <div class="control">
-                  <p class="control has-text-centered"><a href="/">
-                                                  Forgot password?
-                                              </a></p>
+                  <p class="control has-text-centered">
+                    <a href="/">
+                      Forgot password?
+                    </a>
+                  </p>
                 </div>
               </div>
               <div class="field">
@@ -42,68 +44,48 @@
       </div>
     </div>
   </section>
-
-
-
-
-
-  <!-- <div class="login container">
-            <form @submit.prevent="login" class="card-panel">
-              <h2 class="center">Login</h2>
-              <div class="field">
-                <label for="email">Email:</label>
-                <input type="email" name="email" v-model="email">
-              </div>
-              <div class="field">
-                <label for="password">Password:</label>
-                <input type="password" name="password" v-model="password">
-              </div>
-              <div class="field">
-                <p v-if="feedback" class="red-text center">{{ feedback }}</p>
-                <button class="btn blue lighten-1">Login</button>
-              </div>
-            </form>
-          </div> -->
 </template>
 
 <script>
-  import firebase from "firebase";
-  export default {
-    name: "login",
-    data() {
-      return {
-        email: null,
-        password: null,
-        feedback: null
-      };
-    },
-    methods: {
-      login() {
-        if (this.email && this.password) {
-          firebase
-            .auth()
-            .signInWithEmailAndPassword(this.email, this.password)
-            .then(cred => {
-              console.log(cred.user);
-              this.$router.push({
-                name: "Dashboard"
-              });
+import firebase from 'firebase'
+export default {
+  name: 'login',
+  data () {
+    return {
+      email: null,
+      password: null,
+      feedback: null,
+      type: null
+    }
+  },
+  methods: {
+    login () {
+      if (this.email && this.password) {
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password)
+          .then(cred => {
+            console.log(cred.user)
+            this.$router.push({
+              name: 'Dashboard'
             })
-            .catch(err => {
-              this.feedback = err.message;
-            });
-          this.feedback = null;
-        } else {
-          this.feedback = "Please fill in both fields.";
-        }
+          })
+          .catch(err => {
+            this.feedback = err.message
+          })
+        this.feedback = null
+      } else {
+        this.feedback = 'Please fill in both fields.'
+        this.type = 'is-danger'
       }
     }
-  };
+  }
+}
 </script>
 
 <style>
-  .login {
-    max-width: 400px;
-    margin-top: 60px;
-  }
+.login {
+  max-width: 400px;
+  margin-top: 60px;
+}
 </style>

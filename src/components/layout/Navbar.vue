@@ -1,23 +1,23 @@
 <template>
-<nav class="navbar is-transparent">
-  <div class="navbar-brand">
-    <a class="navbar-item">
-      <router-link to="/">
-      <img src="@/assets/logo.svg" alt="Wterdrops">
-      </router-link>
-      </a>
-    <div class="navbar-burger burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <div class="navbar-menu">
-    <div class="navbar-start">
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
       <a class="navbar-item">
-        How it works
+        <router-link to="/">
+          <img src="@/assets/logo.svg" alt="Wterdrops">
+        </router-link>
       </a>
+      <div class="navbar-burger burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          How it works
+        </a>
       </div>
     </div>
 
@@ -26,25 +26,25 @@
         <div class="field is-grouped">
           <p class="control" v-if="!user">
             <a class="button">
-               <router-link :to="{ name: 'Login' }">
-                    Login
-                 </router-link>
+              <router-link :to="{ name: 'Login' }">
+                Login
+              </router-link>
             </a>
           </p>
           <p class="control" v-if="!user">
-            <a class="button white-text is-primary" >
+            <a class="button white-text is-primary">
               <router-link :to="{ name: 'Signup' }">
                 Signup
               </router-link>
             </a>
           </p>
           <a class="button" v-if="user">
-              <a @click="logout">Logout</a>
-            </a>
+            <a @click="logout">Logout</a>
+          </a>
         </div>
       </div>
     </div>
-</nav>
+  </nav>
 </template>
 
 <script>

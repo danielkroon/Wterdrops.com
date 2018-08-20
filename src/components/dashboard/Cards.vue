@@ -53,7 +53,7 @@ export default {
       } else if (household === 3) {
         // 3-person households use 145,000 litres per year
         this.similarHousehold = 0.407
-      } else if (household >= 4) {
+      } else if (household === 4 || 'More than 4') {
         // 4-person households use 191,000 litres per year
         this.similarHousehold = 0.537
       } else {
