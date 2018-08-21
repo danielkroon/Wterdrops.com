@@ -8,11 +8,11 @@
             <h1 class="title">Signup</h1>
             <form @submit.prevent="signup">
               <b-field label="Email" :message="feedback" :type="type">
-                <b-input placeholder="Email" icon="email" type="email" v-model="email">
+                <b-input placeholder="Email" icon="email" type="email" v-model="email" required>
                 </b-input>
               </b-field>
               <b-field label="Password" :message="feedback" :type="type">
-                <b-input placeholder="Password" icon="textbox-password" type="password" password-reveal v-model="password">
+                <b-input placeholder="Password" icon="textbox-password" type="password" password-reveal v-model="password" required>
                 </b-input>
               </b-field>
               <b-field label="Alias" :message="feedback" :type="type">
@@ -20,17 +20,13 @@
                 </b-input>
               </b-field>
               <b-field label="Household size">
-                <b-select placeholder="Select household size" v-model="household" required>
-                  <option v-for="option in household" :value="option.value" :key="option.value">
-                    {{ option }}
-                  </option>
-                </b-select>
+                <b-input placeholder="Household size" icon="counter" type="number" v-model="household" required>
+                </b-input>
               </b-field>
               <button type="submit" class="button is-primary is-fullwidth">Signup</button>
             </form>
           </div>
         </div>
-
         <div class="column"></div>
       </div>
     </div>
@@ -48,7 +44,7 @@ export default {
     return {
       email: null,
       password: null,
-      household: [1, 2, 3, 4, 'More than 4'],
+      household: null,
       alias: null,
       feedback: null,
       slug: null,
@@ -86,8 +82,6 @@ export default {
           }
         })
         console.log(this.slug)
-      } else {
-        this.feedback = 'You must enter all fields'
       }
     }
   }

@@ -1,5 +1,30 @@
 <template>
-  <div id="app">
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column"> </div>
+        <div class="column is-half">
+          <div class="box">
+            <h1 class="title">Add</h1>
+            <p><strong>Please fill in your water meter reading(M&#179;):</strong></p>
+            <form @submit.prevent="addSubmit">
+              <b-field :message="feedback" :type="type">
+                <b-input placeholder="1234" icon="counter" type="number" v-model.number="number" required>
+                </b-input>
+              </b-field>
+              <b-field label="Select a date">
+                <b-datepicker placeholder="Click to select..." icon="calendar-today" v-model="timestamp" required>
+                </b-datepicker>
+              </b-field>
+              <button type="submit" class="button is-primary is-fullwidth">Submit</button>
+            </form>
+          </div>
+        </div>
+        <div class="column"></div>
+      </div>
+    </div>
+  </section>
+  <!-- <div id="app">
     <div class="row">
       <form class="col s12" @submit.prevent="addSubmit">
         <div class="row">
@@ -21,7 +46,7 @@
         </div>
       </form>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -43,7 +68,8 @@ export default {
       timestamp: null,
       usage: 0,
       // current user
-      user: null
+      user: null,
+      type: null
     }
   },
   methods: {
@@ -71,7 +97,6 @@ export default {
         db.collection('submits').add({
           user: this.user,
           number: this.number,
-          timestamp: Date.now(),
           usage: this.usage
         })
           .then(() => {
@@ -86,7 +111,7 @@ export default {
               })
           })
           .then(() => {
-            this.$router.push({name: 'Dashboard'})
+            this.$router.push({ name: 'Dashboard' })
           }).catch(err => {
             console.log(err)
           })
@@ -126,13 +151,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-   /* label underline focus color */
-  input[type=number]:not(.browser-default):focus:not([readonly]) {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
+/* label underline focus color */
+input[type="number"]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
 
-   .text-centered {
-     text-align: center;
-   }
+.text-centered {
+  text-align: center;
+}
 </style>
