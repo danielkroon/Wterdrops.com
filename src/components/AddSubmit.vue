@@ -24,29 +24,6 @@
       </div>
     </div>
   </section>
-  <!-- <div id="app">
-    <div class="row">
-      <form class="col s12" @submit.prevent="addSubmit">
-        <div class="row">
-          <div class="input-field col s6  offset-m3">
-            Please fill in your water meter reading(M&#179;):
-            <input id="numberInput" class="validate" v-model.number="number" type="number" placeholder="1234"/>
-            <label for="numberInput"></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s5 offset-m4">
-            <p v-if="feedback" class="red-text">{{ feedback }}</p>
-          </div>
-        <div class="col s3  offset-m5">
-          <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-          </button>
-        </div>
-        </div>
-      </form>
-    </div>
-  </div> -->
 </template>
 
 <script>
@@ -83,8 +60,11 @@ export default {
         } else {
           this.lastSubmitted = this.previousSubmits[0]
 
+          // format timestamp of last submitted to UTC format
+          this.timestamp = moment.utc(this.timestamp).format()
+
           // calculate the difference in days between last and second submitted with momentJS.
-          let a = moment(this.number.timestamp)
+          let a = moment(this.timestamp)
           let b = moment(this.lastSubmitted.timestamp)
           let diffDays = a.diff(b, 'days')
 
@@ -97,6 +77,7 @@ export default {
         db.collection('submits').add({
           user: this.user,
           number: this.number,
+          timestamp: moment.utc(this.timestamp).format(),
           usage: this.usage
         })
           .then(() => {
