@@ -1,21 +1,18 @@
 <template>
-  <div class="dashboard">
-    <div class="row">
-      <div class="col s12">
-        <h2>Dashboard</h2>
-      <cards :userDataProp="currentUserData"/>
-      <chartusage v-if="previousSubmits.length > 0" :user-submits-prop="previousSubmits" />
-      <submits />
+  <section class="column">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title has-text-primary">
+            <h1>Dashboard</h1>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="fixed-action-btn">
-      <a class="btn-floating btn-large btn-floating pulse blue lighten-1">
-        <router-link :to="{ name: 'AddSubmit' }">
-          <i class="large material-icons">add</i>
-          </router-link>
-      </a>
-    </div>
-  </div>
+    <cards :userDataProp="currentUserData" />
+    <chartusage v-if="previousSubmits.length > 0" :user-submits-prop="previousSubmits" />
+    <submits />
+  </section>
 </template>
 
 <script>

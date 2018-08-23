@@ -1,43 +1,17 @@
 <template>
-  <div class="submits">
-    <div class="col s12">
-    <div class="card">
-      <div class="card-content">
-        <!-- <div class="submit" v-for="previousSubmits in previousSubmits" :key="previousSubmits.id" >
-          <ul class="collection">
-            <li class="collection-item">
-              <i class="material-icons circle delete" @click="deleteSubmit(previousSubmits.id)">delete</i>
-              <p><b>Meter reading: </b>{{ previousSubmits.number }}</p>
-              <p><b>Average use: </b> {{previousSubmits.usage}}</p>
-              <p><b>Date: </b>{{ previousSubmits.timestamp }}</p>
-            </li>
-          </ul>
-        </div> -->
+  <div class="columns is-multiline">
+    <div class="column">
+      <div class="box notification">
+        <div class="heading">
+          Recent submitted water meter readings
+        </div>
+        <div class="title">
+          Submits
+        </div>
+        <b-table :data="previousSubmits" :columns="columns"></b-table>
 
-         <table>
-            <thead>
-              <tr>
-                <th>Meter reading</th>
-                <th>Average use</th>
-                <th>Date</th>
-                <th>Delete</th>
-              </tr>
-               </thead>
-              <tbody>
-              <tr class="submit" v-for="previousSubmits in previousSubmits" :key="previousSubmits.id" >
-                  <td>{{ previousSubmits.number }}</td>
-                  <td>{{previousSubmits.usage}}</td>
-                  <td>{{ previousSubmits.timestamp }}</td>
-                  <td>
-                    <i class="material-icons circle delete" @click="deleteSubmit(previousSubmits.id)">delete</i>
-                  </td>
-                </tr>
-              </tbody>
-
-          </table>
       </div>
-  </div>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -50,7 +24,25 @@ export default {
   name: 'submits',
   data () {
     return {
-      previousSubmits: []
+      previousSubmits: [],
+      columns: [
+        {
+          field: 'number',
+          label: 'Meter reading',
+          sortable: true
+
+        },
+        {
+          field: 'usage',
+          label: 'Average use',
+          sortable: true
+
+        },
+        {
+          field: 'timestamp',
+          label: 'Date'
+        }
+      ]
     }
   },
   methods: {
@@ -65,6 +57,7 @@ export default {
     }
   },
   created () {
+    console.log(this.previousSubmits)
     let ref = db.collection('users')
 
     // get current user
@@ -99,8 +92,8 @@ export default {
 </script>
 
 <style>
-   .delete {
-    cursor: pointer;
-    font-size: 1.4em;
-  }
+.delete {
+  cursor: pointer;
+  font-size: 1.4em;
+}
 </style>

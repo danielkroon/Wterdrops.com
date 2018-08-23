@@ -52,6 +52,8 @@ $colors: (
 // $link-invert: $white;
 // $link-focus-border: $primary;
 
+$notification-background-color: #fff;
+
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

@@ -1,16 +1,20 @@
 <template>
-  <div class="check-usage">
-      <div class="col s12">
-        <div class="card">
-          <div class="card-content">
-              <div class="chart">
-              <chartjs-line
+  <div class="columns is-multiline">
+    <div class="column">
+      <div class="box notification">
+        <div class="heading">
+          Recent submitted water meter readings
+        </div>
+        <div class="title">
+          Submits
+        </div>
+        <chartjs-line
                 :fill="true"
                 :datalabel="'My household usage'"
                 :labels="labels"
                 :data="dataset"
-                :bordercolor="'#1976D2'"
-                :backgroundcolor="'rgba(25,118,210, 0.5)'"
+                :bordercolor="'#42A2FF'"
+                :backgroundcolor="'rgba(66,162,255, 0.5)'"
                 :pointborderwidth="mywidth"
                 :pointbordercolor="mypointbordercolor"
                 :pointhoverborderwidth="hoverwidth"
@@ -18,11 +22,10 @@
                 :pointhoverbordercolor="hoverbordercolor"
                 :bind="true">
               </chartjs-line>
-          </div>
-          </div>
-        </div>
       </div>
+    </div>
   </div>
+
 </template>
 
 <script>

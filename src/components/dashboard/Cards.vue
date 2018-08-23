@@ -1,29 +1,36 @@
 <template>
-<div class="cards">
-  <div class="col m6 s12">
-    <div class="card">
-      <div class="card-content">
-        <div>Usage in similar households</div>
-        <div class="card-value">{{ similarHousehold }} (M&#179;)</div>
+  <div class="columns is-multiline">
+    <div class="column">
+      <div class="box notification is-primary">
+        <div class="heading">
+          Usage in similar households
+        </div>
+        <div class="title">
+          {{ similarHousehold }} (M&#179;)
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col m6 s12">
-    <div class="card">
-      <div class="card-content">
-        <div>Usage in your household</div>
-        <div class="card-value" v-if="userDataProp.usage >= 0">{{ userDataProp.usage }} (M&#179;)</div>
-        <div class="card-value" v-else>No data to display.
-          <a href="" class="waves-effect waves-light btn  blue lighten-1">
-              <router-link :to="{ name: 'AddSubmit' }">
-                    Add data
-              </router-link>
+    <div class="column">
+      <div class="box notification is-primary">
+        <div class="heading">
+          Usage in your household
+        </div>
+        <div class="title" v-if="userDataProp.usage >= 0">
+          {{ userDataProp.usage }} (M&#179;)
+        </div>
+        <div v-else>
+          <div class="title">
+            No data to display.
+          </div>
+          <a class="no-text-decoration button">
+            <router-link :to="{ name: 'AddSubmit' }">
+              Add data
+            </router-link>
           </a>
         </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -67,9 +74,10 @@ export default {
 }
 </script>
 
-<style>
-.card-value {
-  font-size: 26px;
-  font-weight: 300;
+<style lang="scss">
+.no-text-decoration {
+  a {
+    text-decoration: none !important;
+  }
 }
 </style>
