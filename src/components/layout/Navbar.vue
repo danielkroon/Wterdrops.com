@@ -20,7 +20,7 @@
         </a>
         <p class="control navbar-item" v-if="user">
             <a class="button white-text is-primary">
-              <router-link :to="{ name: 'Addsubmit' }">
+              <router-link :to="{ name: 'AddSubmit' }">
                 Add
               </router-link>
             </a>

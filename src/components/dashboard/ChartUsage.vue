@@ -8,20 +8,10 @@
         <div class="title">
           Submits
         </div>
-        <chartjs-line
-                :fill="true"
-                :datalabel="'My household usage'"
-                :labels="labels"
-                :data="dataset"
-                :bordercolor="'#42A2FF'"
-                :backgroundcolor="'rgba(66,162,255, 0.5)'"
-                :pointborderwidth="mywidth"
-                :pointbordercolor="mypointbordercolor"
-                :pointhoverborderwidth="hoverwidth"
-                :pointhoverbackgroundcolor="hoverbackgroundcolor"
-                :pointhoverbordercolor="hoverbordercolor"
-                :bind="true">
-              </chartjs-line>
+        <div class="chartjs">
+          <chartjs-line :fill="true" :datalabel="'My household usage'" :labels="labels" :data="dataset" :bordercolor="'#42A2FF'" :backgroundcolor="'rgba(66,162,255, 0.5)'" :pointborderwidth="mywidth" :pointbordercolor="mypointbordercolor" :pointhoverborderwidth="hoverwidth" :pointhoverbackgroundcolor="hoverbackgroundcolor" :pointhoverbordercolor="hoverbordercolor" :bind="true">
+          </chartjs-line>
+        </div>
       </div>
     </div>
   </div>
