@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Homepage from '@/components/Homepage'
 import Dashboard from '@/components/Dashboard'
 import AddSubmit from '@/components/AddSubmit'
 import Signup from '@/components/auth/Signup'
 import Login from '@/components/auth/Login'
+import Faq from '@/components/Faq'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -12,6 +14,11 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      name: 'Homepage',
+      component: Homepage
+    },
+    {
+      path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard,
       meta: {
@@ -35,6 +42,11 @@ const router = new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/faq',
+      name: 'Faq',
+      component: Faq
     }
   ]
 })

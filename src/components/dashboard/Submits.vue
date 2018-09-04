@@ -1,4 +1,7 @@
 <template>
+<div class="columns is-multiline">
+    <div class="column">
+      <div class="box notification">
   <section>
     <b-field grouped group-multiline>
       <div class="control">
@@ -48,6 +51,9 @@
       </template>
     </b-table>
   </section>
+      </div>
+       </div>
+        </div>
 </template>
 
 <script>

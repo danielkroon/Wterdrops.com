@@ -15,16 +15,6 @@
 
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
-          How it works
-        </a>
-        <p class="control navbar-item" v-if="user">
-            <a class="button white-text is-primary">
-              <router-link :to="{ name: 'AddSubmit' }">
-                Add
-              </router-link>
-            </a>
-          </p>
       </div>
     </div>
 

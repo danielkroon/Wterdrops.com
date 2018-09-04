@@ -12,6 +12,7 @@
     <cards :userDataProp="currentUserData" />
     <chartusage v-if="previousSubmits.length > 0" :user-submits-prop="previousSubmits" />
     <submits />
+    <fab />
   </section>
 </template>
 
@@ -22,13 +23,15 @@ import moment from 'moment'
 import Chartusage from '@/components/dashboard/ChartUsage'
 import Cards from '@/components/dashboard/Cards'
 import Submits from '@/components/dashboard/Submits'
+import Fab from '@/components/Fab'
 
 export default {
   name: 'Dashboard',
   components: {
     Chartusage,
     Cards,
-    Submits
+    Submits,
+    Fab
   },
   data () {
     return {

@@ -5,8 +5,37 @@
         <div class="column"> </div>
         <div class="column is-half">
           <div class="box">
-            <h1 class="title">Add</h1>
-            <p><strong>Please fill in your water meter reading(M&#179;):</strong></p>
+            <div class="columns">
+              <div class="column is-6">
+                <figure class="image is-square">
+                  <img src="@/assets/watermeter.svg">
+                </figure>
+              </div>
+              <div class="column is-6">
+                <p class="title" style="margin-top: 6px">
+                  Submit meter reading
+                </p>
+                <p class="subtitle" style="margin-top: 1px">
+                  Enter all the digits which are before the comma on your water meter.
+                </p>
+                <div class="field">
+                  <div class="control">
+                    <p class="control">
+                      <a>
+                        <router-link :to="{ name: 'Faq' }">
+                          Where is my meter located?
+                        </router-link>
+
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <p>
+              <strong>Select a number (M&#179;)</strong>
+            </p>
             <form @submit.prevent="addSubmit">
               <b-field :message="feedback" :type="type">
                 <b-input placeholder="1234" icon="counter" type="number" v-model.number="number" required>

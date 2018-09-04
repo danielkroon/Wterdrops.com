@@ -11,10 +11,12 @@
           </b-icon>
           <span>MAKE A DONATION</span>
         </a>
-        <br>
-        <p>
+        <div class="by">
+
           <strong>Wterdrops.com</strong> by
-          <a href="https://github.com/danielkroon">Daniel Kroon</a>.</p>
+          <a href="https://github.com/danielkroon">Daniel Kroon</a>.
+        </div>
+
       </div>
     </div>
   </footer>
@@ -34,5 +36,9 @@ export default {
 <style>
 .footer {
   background-color: #fff;
+}
+
+.by {
+  margin: 15px 0 0 0;
 }
 </style>

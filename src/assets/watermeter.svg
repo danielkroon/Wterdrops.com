@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2000px" height="2000px" viewBox="0 0 2000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>watermeter</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="849" y="621" width="300" height="415" rx="8"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="watermeter">
+            <circle id="Oval" fill="#42A2FF" fill-rule="nonzero" cx="1000" cy="1000" r="1000"></circle>
+            <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="184" y="621" width="300" height="415" rx="8"></rect>
+            <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="517" y="621" width="300" height="415" rx="8"></rect>
+            <rect id="Rectangle" fill="#D02919" fill-rule="nonzero" x="1181" y="621" width="300" height="415" rx="8"></rect>
+            <rect id="Rectangle" fill="#D02919" fill-rule="nonzero" x="1516" y="621" width="300" height="415" rx="8"></rect>
+            <text id="9" font-family="Comfortaa-Bold, Comfortaa" font-size="288" font-weight="bold" fill="#FFFFFF">
+                <tspan x="1247.336" y="939">9</tspan>
+            </text>
+            <text id="5" font-family="Comfortaa-Bold, Comfortaa" font-size="288" font-weight="bold" fill="#000000">
+                <tspan x="243.424" y="939">5</tspan>
+            </text>
+            <text id="4" font-family="Comfortaa-Bold, Comfortaa" font-size="288" font-weight="bold" fill="#000000">
+                <tspan x="573.468" y="939">4</tspan>
+            </text>
+            <text id="," font-family="Comfortaa-Bold, Comfortaa" font-size="288" font-weight="bold" fill="#000000">
+                <tspan x="1128.22" y="1085">,</tspan>
+            </text>
+            <text id="1" font-family="Comfortaa-Bold, Comfortaa" font-size="288" font-weight="bold" fill="#FFFFFF">
+                <tspan x="1609.408" y="939">1</tspan>
+            </text>
+            <g id="Group" transform="translate(367.000000, 1122.000000)" fill-rule="nonzero">
+                <rect id="Rectangle-2" fill="#000000" x="0" y="249" width="633" height="83" rx="8"></rect>
+                <rect id="Rectangle-2" fill="#000000" x="0" y="116" width="300" height="83" rx="8"></rect>
+                <circle id="Oval-2" fill="#FFFFFF" cx="1149" cy="224" r="224"></circle>
+            </g>
+            <polygon id="Triangle" fill="#000000" fill-rule="nonzero" transform="translate(1540.208099, 1296.520505) rotate(28.000000) translate(-1540.208099, -1296.520505) " points="1540.2081 1237.0205 1606.2081 1356.0205 1474.2081 1356.0205"></polygon>
+            <circle id="Oval-3" fill="#000000" fill-rule="nonzero" cx="1516.5" cy="1345.5" r="67.5"></circle>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <text id="3" mask="url(#mask-2)" font-family="Comfortaa-Bold, Comfortaa" font-size="288" font-weight="bold" fill="#000000">
+                <tspan x="914.244" y="1115">3</tspan>
+            </text>
+            <text id="2" mask="url(#mask-2)" font-family="Comfortaa-Bold, Comfortaa" font-size="288" font-weight="bold" fill="#000000">
+                <tspan x="914.328" y="786">2</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
