@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2000px" height="2000px" viewBox="0 0 2000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <circle id="Oval" fill="#42A2FF" fill-rule="nonzero" cx="1000" cy="1000" r="1000"></circle>
+            <g id="Group-3" transform="translate(465.000000, 346.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <rect id="Rectangle" transform="translate(532.500000, 40.000000) rotate(90.000000) translate(-532.500000, -40.000000) " x="493" y="-492" width="79" height="1064" rx="8"></rect>
+                <rect id="Rectangle" x="0" y="1" width="79" height="1575" rx="8"></rect>
+                <rect id="Rectangle" x="991" y="1" width="79" height="1575" rx="8"></rect>
+            </g>
+            <g id="Group-2" transform="translate(697.000000, 519.000000)">
+                <rect id="Rectangle-2" fill="#000000" fill-rule="nonzero" x="1" y="538" width="582" height="55" rx="8"></rect>
+                <rect id="Rectangle-2" fill="#000000" fill-rule="nonzero" x="2" y="642" width="582" height="55" rx="8"></rect>
+                <rect id="Rectangle-2" fill="#000000" fill-rule="nonzero" x="2" y="746" width="506" height="55" rx="8"></rect>
+                <rect id="Rectangle-2" fill="#000000" fill-rule="nonzero" x="1" y="850" width="292" height="55" rx="8"></rect>
+                <rect id="Rectangle-2" fill="#000000" fill-rule="nonzero" x="0" y="954" width="582" height="55" rx="8"></rect>
+                <rect id="Rectangle-2" fill="#000000" fill-rule="nonzero" x="0" y="1058" width="230" height="55" rx="8"></rect>
+                <rect id="Rectangle-2" fill="#000000" fill-rule="nonzero" x="0" y="1162" width="465" height="55" rx="8"></rect>
+                <rect id="Rectangle-2" fill="#000000" fill-rule="nonzero" x="2" y="434" width="276" height="55" rx="8"></rect>
+                <path d="M583,228.913525 C583,283.961386 536.394926,328 479.5,328 C422.605074,328 376,283.961386 376,228.913525 C376,173.865665 468.373172,63 479.5,63 C490.626828,63 583,174.444756 583,228.913525 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M384.288562,161.308933 L384.028942,156.83768 C383.646585,150.2526 387.097349,150.409963 391.736441,157.189161 L441.085373,229.303745 C445.724465,236.082943 442.240153,240.192311 433.302944,238.482277 L427.234602,237.321168 C418.297393,235.611134 409.57012,230.757281 407.741691,226.479784 L388.291545,180.977367 C386.463117,176.69987 384.67092,167.894012 384.288562,161.308933 Z" id="Rectangle-2" fill="#42A2FF"></path>
+                <text id="euro" font-family="Comfortaa-Bold, Comfortaa" font-size="288" font-weight="bold" fill="#000000">
+                    <tspan x="0" y="318">€</tspan>
+                </text>
+            </g>
+            <text id="?" font-family="Comfortaa-Bold, Comfortaa" font-size="1000" font-weight="bold" fill="#D02919">
+                <tspan x="727" y="1668">?</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

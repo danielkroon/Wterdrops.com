@@ -7,7 +7,7 @@
                         <div class="column"></div>
                         <div class="column is-6">
                             <h3 class="title is-3 primary-span-home">
-                                High water bill? Track of your household water usage. For free.
+                                Prevent high water bills. Track of your household water usage. For free.
                             </h3>
                             <p></p>
                         </div>
@@ -21,19 +21,51 @@
             <div class="container">
                 <div class="columns is-vcentered">
 
-                    <div class="column is-6 is-offset-1">
-                        <p class="title" style="margin-top: 6px;">
+                    <div class="column is-3 is-offset-1">
+                        <div class="image-centered">
+                            <figure class="image">
+                                <img src="@/assets/suprise.svg">
+                            </figure>
+                        </div>
+<hr class="spacer is-1">
+                        <p class="title has-text-centered is-spaced">
+                            <strong>Surprise water bills?</strong>
+                        </p>
+                        <p class="subtitle has-text-centered">
+                            High water bill because you don't know how much water your household uses?
+                        </p>
+                    </div>
+
+                    <div class="column is-3 is-offset-1">
+                        <div class="image-centered">
+                            <figure class="image">
+                                <img src="@/assets/watermeter.svg">
+                            </figure>
+                        </div>
+<hr class="spacer is-1">
+                        <p class="title has-text-centered is-spaced">
                             <strong>Submit your meter reading</strong>
                         </p>
-                        <p class="subtitle" style="margin-top: -0.5rem;">
-                            No expesive monitoring devices needed. Just you and your pair of eyes.
+                        <p class="subtitle has-text-centered">
+                            No expesive monitoring devices needed. Just you, your meter and a pair of healthy eyes.
                         </p>
                     </div>
-                    <div class="column is-6 is-offset-1">
-                        <figure class="image image-meter">
-                            <img src="@/assets/watermeter.svg">
-                        </figure>
+
+                    <div class="column is-3 is-offset-1">
+                       <div class="image-centered">
+                            <figure class="image">
+                                <img src="@/assets/chart.svg">
+                            </figure>
+                        </div>
+                        <hr class="spacer is-1">
+                        <p class="title has-text-centered is-spaced">
+                            <strong>Track water in dashboard</strong>
+                        </p>
+                        <p class="subtitle has-text-centered">
+                            Your own dashboard gives you insights into your water use. So you can save water and money.
+                        </p>
                     </div>
+
                 </div>
             </div>
             <div class="container">
@@ -46,7 +78,7 @@
 
                     </div>
                     <div class="column is-3by4">
-                          <p class="title" style="margin-top: 6px;">
+                        <p class="title" style="margin-top: 6px;">
                             <strong>Personal usage dashboard</strong>
                         </p>
                         <p class="subtitle" style="margin-top: -0.5rem;">
@@ -88,7 +120,8 @@ export default {
   background-size: cover;
 }
 
-.image-meter {
-    width: 50%;
+.image-centered {
+    display: flex;
+    justify-content: center;
 }
 </style>
