@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .footer {
   background-color: #42A2FF;
 }

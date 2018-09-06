@@ -70,13 +70,13 @@
             </div>
 
         </section>
- <div class="hero is-large hero-image laptop" v-bind:style="{ 'background-image': 'url(' + laptop + ')' }">
+        <div class="hero is-large hero-image laptop" v-bind:style="{ 'background-image': 'url(' + laptop + ')' }">
             <div class="hero-body home-search-body">
                 <div class="container">
                     <div class="columns">
-<div class="column is-6">
+                        <div class="column is-6">
                             <h3 class="title is-3 primary-span-home">
-                                    Get insights on your household water usage with a personal dashboard.
+                                Get insights on your household water usage with a personal dashboard.
                             </h3>
                             <p></p>
                         </div>
