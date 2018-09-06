@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="2003px" height="2000px" viewBox="0 0 2003 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="2000px" height="2000px" viewBox="0 0 2000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
     <title>Group</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group" transform="translate(3.000000, 0.000000)" fill-rule="nonzero">
+        <g id="Group" fill-rule="nonzero">
             <circle id="Oval" fill="#42A2FF" cx="1000" cy="1000" r="1000"></circle>
-            <g id="Group-2" transform="translate(19.000000, 387.000000)">
-                <path d="M387.5,382.5 L903.5,589.5" id="Line" stroke="#FFFFFF" stroke-width="30" stroke-linecap="square"></path>
-                <path d="M1040.5,662.5 L1562,980" id="Line" stroke="#FFFFFF" stroke-width="30" stroke-linecap="square"></path>
-                <path d="M1468.5,931.5 L1790,1218" id="Line" stroke="#FFFFFF" stroke-width="30" stroke-linecap="square"></path>
-                <path d="M0,0 L427.5,401.5" id="Line" stroke="#FFFFFF" stroke-width="30" stroke-linecap="square"></path>
-                <circle id="Oval-2" fill="#000000" cx="980.5" cy="612.5" r="126.5"></circle>
-                <circle id="Oval-2" fill="#000000" cx="428.5" cy="402.5" r="126.5"></circle>
-                <circle id="Oval-2" fill="#000000" cx="1502.5" cy="947.5" r="126.5"></circle>
+            <path d="M1660.01563,1478.9375 C1707.43505,1525.44037 1740.3413,1553.37266 1758.73438,1562.73438 C1781.37674,1574.2589 1783.58382,1622.31143 1808.82324,1588.55925 C1936.27441,1418.12128 2000,1221.93486 2000,1000 C2000,447.71525 1552.28475,0 1000,0 C629.514418,0 306.085544,201.473722 133.299939,500.834606 C105.136739,549.628952 123.282477,519.167405 152.434361,533.652332 C184.565993,549.617831 268.736975,641.800545 298.25,665.65625 C322.571746,685.315787 396.59375,717.616689 396.59375,772.46875 C396.59375,852.605022 390.758017,780.114653 466.375,800.19241 C592.010752,833.551108 850.258579,934.8733 1056.07813,1038.32812 C1215.72091,1118.57229 1417.03341,1265.44208 1660.01563,1478.9375 Z" id="Oval" fill="#B3D136"></path>
+            <g id="Group-2" transform="translate(128.000000, 514.000000)">
+                <path d="M278.5,255.5 L794.5,462.5" id="Line" stroke="#FFFFFF" stroke-width="30" stroke-linecap="square"></path>
+                <path d="M931.5,535.5 L1453,853" id="Line" stroke="#FFFFFF" stroke-width="30" stroke-linecap="square"></path>
+                <path d="M1359.5,804.5 L1681,1091" id="Line" stroke="#FFFFFF" stroke-width="30" stroke-linecap="square"></path>
+                <path d="M0,0 L318.5,274.5" id="Line" stroke="#FFFFFF" stroke-width="30" stroke-linecap="square"></path>
+                <circle id="Oval-2" fill="#000000" cx="866" cy="496" r="94"></circle>
+                <circle id="Oval-2" fill="#000000" cx="1394" cy="837" r="94"></circle>
+                <circle id="Oval-2" fill="#000000" cx="305" cy="256" r="94"></circle>
             </g>
         </g>
     </g>

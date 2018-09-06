@@ -11,8 +11,8 @@
             <circle id="Oval" fill="#42A2FF" fill-rule="nonzero" cx="1000" cy="1000" r="1000"></circle>
             <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="184" y="621" width="300" height="415" rx="8"></rect>
             <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="517" y="621" width="300" height="415" rx="8"></rect>
-            <rect id="Rectangle" fill="#D02919" fill-rule="nonzero" x="1181" y="621" width="300" height="415" rx="8"></rect>
-            <rect id="Rectangle" fill="#D02919" fill-rule="nonzero" x="1516" y="621" width="300" height="415" rx="8"></rect>
+            <rect id="Rectangle" fill="#B3D136" fill-rule="nonzero" x="1181" y="621" width="300" height="415" rx="8"></rect>
+            <rect id="Rectangle" fill="#B3D136" fill-rule="nonzero" x="1516" y="621" width="300" height="415" rx="8"></rect>
             <text id="9" font-family="Comfortaa-Bold, Comfortaa" font-size="288" font-weight="bold" fill="#FFFFFF">
                 <tspan x="1247.336" y="939">9</tspan>
             </text>

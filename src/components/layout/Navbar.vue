@@ -35,6 +35,13 @@
               </router-link>
             </a>
           </p>
+         <p class="control" v-if="user">
+            <a class="button  white-text is-primary">
+              <router-link :to="{ name: 'Dashboard' }">
+                Dashboard
+              </router-link>
+            </a>
+          </p>
           <a class="button" v-if="user">
             <a @click="logout">Logout</a>
           </a>

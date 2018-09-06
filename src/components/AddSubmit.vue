@@ -25,7 +25,6 @@
                         <router-link :to="{ name: 'Faq' }">
                           Where is my meter located?
                         </router-link>
-
                       </a>
                     </p>
                   </div>

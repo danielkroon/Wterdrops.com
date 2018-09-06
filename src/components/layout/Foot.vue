@@ -6,7 +6,7 @@
           <strong>Wterdrops.com</strong> lets you track your household water usage manually without expensive devices for free.</p>
         <p></p>
         <p>Consider a small donation to help me to keep the site running!</p>
-        <a href="https://paypal.me/kroon22" target="_blank" type="button" class="button is-primary">
+        <a href="https://paypal.me/kroon22" target="_blank" type="button" class="button">
           <b-icon icon="coffee" size="is-small">
           </b-icon>
           <span>MAKE A DONATION</span>
@@ -35,10 +35,14 @@ export default {
 
 <style>
 .footer {
-  background-color: #fff;
+  background-color: #42A2FF;
 }
 
 .by {
   margin: 15px 0 0 0;
+}
+
+p {
+  color: #fff;
 }
 </style>

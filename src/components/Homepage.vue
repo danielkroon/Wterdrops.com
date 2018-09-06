@@ -27,7 +27,7 @@
                                 <img src="@/assets/suprise.svg">
                             </figure>
                         </div>
-<hr class="spacer is-1">
+                        <hr class="spacer is-1">
                         <p class="title has-text-centered is-spaced">
                             <strong>Surprise water bills?</strong>
                         </p>
@@ -42,7 +42,7 @@
                                 <img src="@/assets/watermeter.svg">
                             </figure>
                         </div>
-<hr class="spacer is-1">
+                        <hr class="spacer is-1">
                         <p class="title has-text-centered is-spaced">
                             <strong>Submit your meter reading</strong>
                         </p>
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="column is-3 is-offset-1">
-                       <div class="image-centered">
+                        <div class="image-centered">
                             <figure class="image">
                                 <img src="@/assets/chart.svg">
                             </figure>
@@ -68,27 +68,24 @@
 
                 </div>
             </div>
-            <div class="container">
-                <div class="columns is-vcentered">
 
-                    <div class="column is-6">
-                        <figure class="image">
-                            <img src="@/assets/watermeter.svg">
-                        </figure>
+        </section>
+ <div class="hero is-large hero-image laptop" v-bind:style="{ 'background-image': 'url(' + laptop + ')' }">
+            <div class="hero-body home-search-body">
+                <div class="container">
+                    <div class="columns">
+<div class="column is-6">
+                            <h3 class="title is-3 primary-span-home">
+                                    Get insights on your household water usage with a personal dashboard.
+                            </h3>
+                            <p></p>
+                        </div>
 
-                    </div>
-                    <div class="column is-3by4">
-                        <p class="title" style="margin-top: 6px;">
-                            <strong>Personal usage dashboard</strong>
-                        </p>
-                        <p class="subtitle" style="margin-top: -0.5rem;">
-                            Get insights on your household water usage with a personal dashboard.
-                        </p>
+                        <div class="column"></div>
                     </div>
                 </div>
             </div>
-        </section>
-
+        </div>
     </div>
 </template>
 
@@ -98,7 +95,8 @@ export default {
   name: 'Homepage',
   data () {
     return {
-      image: require('@/assets/hero.jpg')
+      image: require('@/assets/hero.jpg'),
+      laptop: require('@/assets/laptop.jpg')
     }
   }
 }
@@ -114,14 +112,11 @@ export default {
 }
 
 .hero-image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
 }
 
 .image-centered {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 </style>
