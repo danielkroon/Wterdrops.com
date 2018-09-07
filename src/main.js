@@ -7,12 +7,24 @@ import 'chart.js'
 import 'hchs-vue-charts'
 import firebase from 'firebase'
 import Buefy from 'buefy'
+import VueAnalytics from 'vue-analytics'
 
 Vue.use(Buefy)
 
 Vue.use(window.VueCharts)
 
 Vue.config.productionTip = false
+
+const isProd = process.env.NODE_ENV === 'production'
+
+Vue.use(VueAnalytics, {
+  id: 'UA-125402185-1',
+  router,
+  debug: {
+    enabled: !isProd,
+    sendHitTask: isProd
+  }
+})
 
 let app = null
 
