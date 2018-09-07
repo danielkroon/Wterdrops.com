@@ -7,7 +7,6 @@ import 'chart.js'
 import 'hchs-vue-charts'
 import firebase from 'firebase'
 import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
 
 Vue.use(Buefy)
 
