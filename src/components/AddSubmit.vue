@@ -99,6 +99,7 @@ export default {
           // calculate the difference in days between last and second submitted.
           let diffStat = Math.abs(this.number - this.lastSubmitted.number)
           this.usage = (diffStat / diffDays).toFixed(2)
+          parseFloat(this.usage)
         }
 
         // add submit to submits collection in firestore
@@ -109,7 +110,7 @@ export default {
           usage: this.usage
         })
           .then(() => {
-            db.collection('users').where('alias', '==', this.user).get()
+            db.collection('users').where('user_id', '==', this.user).get()
               .then(snapshot => {
                 snapshot.forEach((doc) => {
                   // update user record in firestore
@@ -137,14 +138,13 @@ export default {
       .then(snapshot => {
         snapshot.forEach(doc => {
           this.user = doc.data()
-          this.user = doc.id
+          this.user = doc.data().user_id
         })
       })
       .then(() => {
         // fetch the user previous submits from the firestore
         db.collection('submits').where('user', '==', this.user).get()
           .then(snapshot => {
-            // console.log(snapshot)
             snapshot.forEach(doc => {
               let submit = doc.data()
               submit.id = doc.id

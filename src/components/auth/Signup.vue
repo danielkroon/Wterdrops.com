@@ -20,7 +20,7 @@
                 </b-input>
               </b-field>
               <b-field label="Household size">
-                <b-input placeholder="Household size" icon="counter" type="number" v-model="household" required>
+                <b-input placeholder="Household size" icon="counter" type="number" v-model.number="household" required>
                 </b-input>
               </b-field>
               <button type="submit" class="button is-primary is-fullwidth">Signup</button>
@@ -81,7 +81,6 @@ export default {
             this.feedback = 'This alias is free to use'
           }
         })
-        console.log(this.slug)
       }
     }
   }

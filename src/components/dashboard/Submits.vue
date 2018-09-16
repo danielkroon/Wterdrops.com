@@ -80,7 +80,6 @@ export default {
 
       // delete doc from firestore
       checkedIDs.forEach(id => {
-        console.log(id)
         db.collection('submits').doc(id).delete()
           .then(() => {
             this.previousSubmits = this.previousSubmits.filter(submit => {
@@ -98,7 +97,7 @@ export default {
       .then(snapshot => {
         snapshot.forEach(doc => {
           this.user = doc.data()
-          this.user = doc.id
+          this.user = doc.data().user_id
         })
       })
       .then(() => {

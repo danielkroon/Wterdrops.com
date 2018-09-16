@@ -53,7 +53,7 @@ export default {
       })
       .then(() => {
         // fetch the user previous submits from the firestore
-        db.collection('submits').where('user', '==', this.currentUserData.alias).get()
+        db.collection('submits').where('user', '==', this.currentUserData.user_id).get()
           .then(snapshot => {
             snapshot.forEach(doc => {
               let submit = doc.data()
