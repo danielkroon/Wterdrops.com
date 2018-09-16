@@ -6,7 +6,9 @@ import AddSubmit from '@/components/AddSubmit'
 import Signup from '@/components/auth/Signup'
 import Login from '@/components/auth/Login'
 import Faq from '@/components/Faq'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
 
 Vue.use(Router)
 
