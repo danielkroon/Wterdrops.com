@@ -29,6 +29,12 @@ import Fab from '@/components/Fab'
 
 export default {
   name: 'Dashboard',
+  metaInfo: {
+    // specify a metaInfo.title, this title will be used
+    title: 'Dashboard',
+    // all titles will be injected into this template
+    titleTemplate: '%s | Wterdrops.com'
+  },
   components: {
     Chartusage,
     Cards,

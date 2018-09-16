@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Meta from 'vue-meta'
 import Homepage from '@/components/Homepage'
 import Dashboard from '@/components/Dashboard'
 import AddSubmit from '@/components/AddSubmit'
@@ -11,6 +12,7 @@ import 'firebase/auth'
 import 'firebase/firestore'
 
 Vue.use(Router)
+Vue.use(Meta)
 
 const router = new Router({
   routes: [

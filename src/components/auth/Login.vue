@@ -53,6 +53,12 @@ import 'firebase/firestore'
 
 export default {
   name: 'login',
+  metaInfo: {
+    // specify a metaInfo.title, this title will be used
+    title: 'Login',
+    // all titles will be injected into this template
+    titleTemplate: '%s | Wterdrops.com'
+  },
   data () {
     return {
       email: null,

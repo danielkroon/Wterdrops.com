@@ -14,6 +14,12 @@ export default {
   components: {
     Navbar,
     Foot
+  },
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: 'Wterdrops.com',
+    // all titles will be injected into this template
+    titleTemplate: '%s | Track your household water usage manually for free.'
   }
 }
 </script>

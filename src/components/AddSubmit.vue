@@ -63,6 +63,12 @@ import 'firebase/firestore'
 
 export default {
   name: 'AddSubmit',
+  metaInfo: {
+    // specify a metaInfo.title, this title will be used
+    title: 'Add',
+    // all titles will be injected into this template
+    titleTemplate: '%s | Wterdrops.com'
+  },
   // data function avails data to the template
   data () {
     return {
