@@ -1,20 +1,25 @@
 <template>
-  <nav class="navbar is-transparent">
+  <nav class="navbar is-fixed-top">
     <div class="navbar-brand">
       <a class="navbar-item">
         <router-link to="/">
           <img src="@/assets/logo.svg" alt="Wterdrops">
         </router-link>
       </a>
-      <div class="navbar-burger burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </div>
 
     <div class="navbar-menu">
       <div class="navbar-start">
+        <a class="navbar-item">
+            <router-link :to="{ name: 'Homepage' }">
+              Home
+            </router-link>
+          </a>
+            <a class="navbar-item">
+            <router-link :to="{ name: 'Faq' }">
+              FAQ
+            </router-link>
+          </a>
       </div>
     </div>
 

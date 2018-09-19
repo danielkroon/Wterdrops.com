@@ -27,7 +27,7 @@ export default {
 <style lang="scss">
 
 .body {
-  background-color: #f4f4f4;
+  background-color: #fff;
 }
 
   // Import Bulma's core
@@ -38,6 +38,8 @@ $primary: #42A2FF;
 $primary-invert: findColorInvert($primary);
 $twitter: #4099FF;
 $twitter-invert: findColorInvert($twitter);
+$dark: #B3D136;
+// #1f95c4 accent blauw
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (

@@ -3,16 +3,6 @@
     <div class="column">
       <div class="box notification is-primary">
         <div class="heading">
-          Usage in similar households
-        </div>
-        <div class="title">
-          {{ similarHousehold }} (M&#179;)
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box notification is-primary">
-        <div class="heading">
           Usage in your household
         </div>
         <div class="title" v-if="userDataProp.usage >= 0">
@@ -27,6 +17,29 @@
               Add data
             </router-link>
           </a>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="has-text-centered">
+        <p class="subtitle is-4">New reading?</p>
+      </div>
+      <div class="horizontal-align submit-button">
+        <a class="button white-text is-dark is-large">
+          <router-link :to="{ name: 'AddSubmit' }">
+            Submit
+          </router-link>
+        </a>
+      </div>
+
+    </div>
+    <div class="column">
+      <div class="box notification">
+        <div class="heading">
+          Usage in similar households
+        </div>
+        <div class="title">
+          {{ similarHousehold }} (M&#179;)
         </div>
       </div>
     </div>
@@ -79,5 +92,14 @@ export default {
   a {
     text-decoration: none !important;
   }
+}
+
+.horizontal-align {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  margin-top: 10px;
 }
 </style>
