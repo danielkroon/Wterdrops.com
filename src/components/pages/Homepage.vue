@@ -46,7 +46,7 @@
                         <strong>Add manually</strong>
                     </p>
                     <p class="subtitle is-6">
-                        No expesive devices needed.
+                        No expensive devices needed.
                         <strong>It's free.</strong>
                     </p>
                     <div class="how-it-works-image">
