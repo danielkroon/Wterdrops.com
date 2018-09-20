@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-fixed-top">
+  <nav class="navbar is-transparant has-shadow">
     <div class="navbar-brand">
       <a class="navbar-item">
         <router-link to="/">
@@ -11,15 +11,10 @@
     <div class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item">
-            <router-link :to="{ name: 'Homepage' }">
-              Home
-            </router-link>
-          </a>
-            <a class="navbar-item">
-            <router-link :to="{ name: 'Faq' }">
-              FAQ
-            </router-link>
-          </a>
+          <router-link :to="{ name: 'Faq' }">
+            FAQ
+          </router-link>
+        </a>
       </div>
     </div>
 
@@ -40,7 +35,7 @@
               </router-link>
             </a>
           </p>
-         <p class="control" v-if="user">
+          <p class="control" v-if="user">
             <a class="button  white-text is-primary">
               <router-link :to="{ name: 'Dashboard' }">
                 Dashboard
@@ -90,8 +85,14 @@ export default {
 
 <style lang="scss">
 .white-text {
+  // ugly but Bulma requires me to do this
+  color: #fff !important;
   a {
-    color: white;
+    color: #fff !important;
   }
+}
+
+.has-shadow {
+  box-shadow: 0 2px 0 0 #f5f5f5;
 }
 </style>

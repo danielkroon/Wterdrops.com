@@ -1,22 +1,30 @@
 <template>
     <div>
         <!-- Start of hero section -->
-        <section class="hero hero-background is-medium hero-image image-centered " v-bind:style="{ 'background-image': 'url(' + laptop + ')' }">
+        <section class="hero hero-background is-medium hero-image image-centered " v-bind:style="{ 'background-image': 'url(' + hands + ')' }">
             <div class="hero-body">
-                <div class="container primary-span-home">
-                    <h1 class="title">
-                        Save water & money
-                    </h1>
-                    <h2 class="subtitle">
-                        Track your household water usage free
-                    </h2>
- <a class="button white-text is-dark is-large">
-                        <router-link :to="{ name: 'Signup' }">
-                            Start tracking
-                        </router-link>
-                    </a>
-                </div>
+                <div class="container has-text-centered">
+                    <div class="columns">
+                        <div class="column"></div>
+                        <div class="column is-6">
+                            <div class="primary-span-home">
+                            <h1 class="title white-text">
+                                Save water & money
+                            </h1>
+                            <h2 class="subtitle white-text">
+                                Track your household water usage free
+                            </h2>
+                            </div>
+<a class="button white-text is-dark is-large">
+                            <router-link :to="{ name: 'Signup' }">
+                                Start tracking
+                            </router-link>
+                        </a>
+                        </div>
+                        <div class="column"></div>
 
+                    </div>
+                </div>
             </div>
         </section>
         <!-- End of hero section -->
@@ -75,7 +83,7 @@
                             </h3>
                             <p class="subtitle is-4">
                                 Wterdrops helps
-                                <strong>saving you wallet and our planet.</strong>
+                                <strong>saving your wallet and our planet.</strong>
                                 <span class="why-text">For free.</span>
                             </p>
                             <div class="content">
@@ -103,7 +111,7 @@ export default {
   name: 'Homepage',
   data () {
     return {
-      laptop: require('@/assets/laptop.jpg')
+      hands: require('@/assets/hands.jpg')
     }
   }
 }
@@ -128,6 +136,7 @@ export default {
   opacity: 0.9;
   padding: 10px;
   border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 .how-it-works-image {

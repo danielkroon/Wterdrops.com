@@ -6,6 +6,9 @@ import Dashboard from '@/components/pages/dashboard/Dashboard'
 import AddSubmit from '@/components/pages/AddSubmit'
 import Signup from '@/components/auth/Signup'
 import Login from '@/components/auth/Login'
+import Terms from '@/components/pages/Terms'
+import Cookie from '@/components/pages/Cookie'
+import Privacy from '@/components/pages/Privacy'
 import Faq from '@/components/pages/Faq'
 import firebase from 'firebase/app'
 import 'firebase/auth'
@@ -52,6 +55,21 @@ const router = new Router({
       path: '/faq',
       name: 'Faq',
       component: Faq
+    },
+    {
+      path: '/terms',
+      name: 'Terms',
+      component: Terms
+    },
+    {
+      path: '/cookie',
+      name: 'Cookie',
+      component: Cookie
+    },
+    {
+      path: '/privacy',
+      name: 'Privacy',
+      component: Privacy
     }
   ]
 })

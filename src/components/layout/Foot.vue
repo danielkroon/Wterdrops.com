@@ -1,25 +1,4 @@
 <template>
-  <!-- <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Wterdrops.com</strong> lets you track your household water usage manually without expensive devices for free.</p>
-        <p></p>
-        <p>Consider a small donation to help me to keep the site running!</p>
-        <a href="https://paypal.me/kroon22" target="_blank" type="button" class="button">
-          <b-icon icon="coffee" size="is-small">
-          </b-icon>
-          <span>MAKE A DONATION</span>
-        </a>
-        <div class="by">
-
-          <strong>Wterdrops.com</strong> by
-          <a href="https://github.com/danielkroon">Daniel Kroon</a>.
-        </div>
-
-      </div>
-    </div>
-  </footer> -->
   <footer class="footer footer-light-medium">
     <div class="container">
       <div class="columns">
@@ -48,44 +27,22 @@
                 </li>
                 <li class="column-item">
                   <a>
-                    <router-link :to="{ name: 'Faq' }">
-                      Terms of Service
+                    <router-link :to="{ name: 'Terms' }">
+                    Terms of service
                     </router-link>
                   </a>
                 </li>
                 <li class="column-item">
                   <a>
-                    <router-link :to="{ name: 'Faq' }">
-                      Privacy policy
-                    </router-link>
-                  </a>
-                </li>
-                 <li class="column-item">
-                  <a>
-                    <router-link :to="{ name: 'Faq' }">
-                      Cookie policy
-                    </router-link>
-                  </a>
-                </li>
-              </ul>
-            </div>
-             <!-- Column -->
-            <div class="column">
-              <ul class="footer-column">
-                <li class="column-header">
-                  About
-                </li>
-                <li class="column-item">
-                  <a>
-                    <router-link :to="{ name: 'Homepage' }">
-                      Home
+                    <router-link :to="{ name: 'Privacy' }">
+                    Privacy policy
                     </router-link>
                   </a>
                 </li>
                 <li class="column-item">
                   <a>
-                    <router-link :to="{ name: 'Faq' }">
-                      About the platform
+                    <router-link :to="{ name: 'Cookie' }">
+                    Cookie policy
                     </router-link>
                   </a>
                 </li>
@@ -99,15 +56,8 @@
                 </li>
                 <li class="column-item">
                   <a>
-                    <router-link :to="{ name: 'Homepage' }">
-                      FAQ
-                    </router-link>
-                  </a>
-                </li>
-                <li class="column-item">
-                  <a>
                     <router-link :to="{ name: 'Faq' }">
-                      How it works
+                      FAQ
                     </router-link>
                   </a>
                 </li>

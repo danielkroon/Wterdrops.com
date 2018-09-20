@@ -25,6 +25,28 @@
               </b-field>
               <button type="submit" class="button is-primary is-fullwidth">Signup</button>
             </form>
+            <div class="terms-signup">
+              <p>When you continue, you agree to our
+                <a>
+                  <router-link :to="{ name: 'Terms' }">
+                    Terms of Service.
+                  </router-link>
+                </a>
+              </p>
+              <p>We will manage information about you as described in our
+                <a>
+                  <router-link :to="{ name: 'Terms' }">
+                    Privacy policy.
+                  </router-link>
+                </a>
+                and
+                 <a>
+                  <router-link :to="{ name: 'Cookie' }">
+                    Cookie policy.
+                  </router-link>
+                </a>
+              </p>
+              </div>
           </div>
         </div>
         <div class="column"></div>
@@ -107,5 +129,9 @@ export default {
 
 .signup .field {
   margin: 0 0 16px 0;
+}
+
+.terms-signup {
+  margin-top: 15px;
 }
 </style>
