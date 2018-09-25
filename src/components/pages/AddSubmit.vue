@@ -77,8 +77,9 @@ export default {
       previousSubmits: [],
       lastSubmitted: null,
       // submit data
-      number: 0,
-      timestamp: null,
+      number: null,
+      // set today as default date
+      timestamp: new Date(),
       usage: 0,
       // current user
       user: null,
@@ -154,6 +155,7 @@ export default {
         db.collection('submits').where('user', '==', this.user).get()
           .then(snapshot => {
             snapshot.forEach(doc => {
+              debugger
               let submit = doc.data()
               submit.id = doc.id
               submit.timestamp = moment(doc.data().timestamp).format('lll')

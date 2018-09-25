@@ -19,9 +19,7 @@
               <div class="field">
                 <div class="control">
                   <p class="control has-text-centered">
-                    <a href="/">
-                      Forgot password?
-                    </a>
+                    <ForgotPassword/>
                   </p>
                 </div>
               </div>
@@ -50,6 +48,7 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
+import ForgotPassword from '@/components/auth/ForgotPassword'
 
 export default {
   name: 'login',
@@ -58,6 +57,9 @@ export default {
     title: 'Login',
     // all titles will be injected into this template
     titleTemplate: '%s | Wterdrops.com'
+  },
+  components: {
+    ForgotPassword
   },
   data () {
     return {
