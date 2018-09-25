@@ -25,9 +25,10 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto');
 .body {
   background-color: #fff;
+  font-family: 'Roboto', sans-serif;
 }
 
   // Import Bulma's core

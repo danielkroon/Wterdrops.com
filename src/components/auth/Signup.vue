@@ -108,7 +108,6 @@ export default {
                 console.log(err)
                 this.feedback = err.message
               })
-            this.feedback = 'This alias is free to use'
           }
         })
       }

@@ -11,7 +11,7 @@
                         <p class="modal-card-title">Forgot password?</p>
                     </header>
                     <section class="modal-card-body">
-                        <b-field label="Email">
+                        <b-field label="Email" :message="feedback">
                             <b-input
                                 type="email"
                                 v-model="resetEmail"
@@ -22,7 +22,7 @@
 
                     </section>
                     <footer class="modal-card-foot">
-                        <button class="button" type="button" @click="$parent.close()">Close</button>
+                        <button class="button" type="button" @click="closeResetMailModal()">Close</button>
                         <button class="button is-primary">Reset</button>
                     </footer>
                 </div>
@@ -36,38 +36,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 
-// const ModalForm = {
-//   props: ['resetEmail'],
-//   template: `
-//             // <form @submit.prevent="sendResetMail">
-//             //     <div class="modal-card" style="width: auto">
-//             //         <header class="modal-card-head">
-//             //             <p class="modal-card-title">Forgot password?</p>
-//             //         </header>
-//             //         <section class="modal-card-body">
-//             //             <b-field label="Email">
-//             //                 <b-input
-//             //                     type="email"
-//             //                     :value="resetEmail"
-//             //                     placeholder="Your email"
-//             //                     required>
-//             //                 </b-input>
-//             //             </b-field>
-
-//             //         </section>
-//             //         <footer class="modal-card-foot">
-//             //             <button class="button" type="button" @click="$parent.close()">Close</button>
-//             //             <button class="button is-primary">Reset</button>
-//             //         </footer>
-//             //     </div>
-//             // </form>
-//         `
-// }
-
 export default {
-//   components: {
-//     ModalForm
-//   },
   data () {
     return {
       isComponentModalActive: false,
@@ -77,18 +46,34 @@ export default {
   },
   methods: {
     sendResetMail () {
-      debugger
       var auth = firebase.auth()
       var emailAddress = this.resetEmail
 
       auth.sendPasswordResetEmail(emailAddress).then(function () {
         // Email sent.
         console.log('email send')
-      }).catch(function (error) {
-        // An error happened.
-        this.feedback = error.message
-        console.log(error.message)
+        this.sendResetSucces()
+      }).catch(err => {
+        this.feedback = err.message
+        console.log(this.feedback)
       })
+      if (this.feedback != null) {
+        this.isComponentModalActive = false
+
+        this.$toast.open({
+          message: 'Success! Check your inbox!',
+          type: 'is-success',
+          duration: 5000
+        })
+      } else {
+        this.resetEmail = ''
+        this.feedback = null
+      }
+    },
+    closeResetMailModal () {
+      this.resetEmail = ''
+      this.feedback = null
+      this.isComponentModalActive = false
     }
   }
 }
