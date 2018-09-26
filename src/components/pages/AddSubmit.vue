@@ -155,7 +155,6 @@ export default {
         db.collection('submits').where('user', '==', this.user).get()
           .then(snapshot => {
             snapshot.forEach(doc => {
-              debugger
               let submit = doc.data()
               submit.id = doc.id
               submit.timestamp = moment(doc.data().timestamp).format('lll')
