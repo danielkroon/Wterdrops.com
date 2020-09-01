@@ -17,7 +17,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/vue-fontawesome": "^0.1.1",
-    "buefy": "^0.6.6",
+    "buefy": "^0.6.7",
     "chart.js": "^2.7.2",
     "firebase": "^5.0.2",
     "firebase-tools": "^3.19.1",
